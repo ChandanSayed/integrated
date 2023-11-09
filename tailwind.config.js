@@ -9,11 +9,14 @@ module.exports = {
       },
       fontFamily: {
         quickSand: "'Quicksand', sans-serif",
-        GilroyBlack: 'Gilroy-Black'
+        GilroyBlack: 'Gilroy-Black',
+        Gilroy: 'Gilroy'
       },
       colors: {
         yellow: '#F8C65D',
-        textColor: '#02030F'
+        textColor: '#02030F',
+        blurColor: '#031A5E',
+        yellowHover: '#ffb10c'
       }
     }
   },

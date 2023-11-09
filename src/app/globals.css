@@ -5,6 +5,11 @@
   font-display: swap;
   src: url('/font/Gilroy-Black.woff');
 }
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url('/font/Gilroy-Regular.woff');
+}
 
 @tailwind base;
 @tailwind components;

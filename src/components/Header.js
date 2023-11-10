@@ -7,7 +7,7 @@ import { useAppContext } from '@/context/AppContext';
 import Hero from './Hero';
 import Logo from './Logo';
 
-const Header = ({ activeScrollMenu }) => {
+const Header = ({ activeScrollMenu, setShowSidebarMenu }) => {
   const { arabicLanguage } = useAppContext();
 
   const handleSetActive = to => {
@@ -19,11 +19,11 @@ const Header = ({ activeScrollMenu }) => {
   }
 
   return (
-    <header className="max-w-[1268px] mx-auto px-4 mt-[104px] relative z-10">
-      <div className="fixed top-0 left-0 right-0 w-full pt-4 bg-[#0f101b]">
+    <header className="max-w-[1268px] mx-auto px-4 mt-[104px] relative z-20">
+      <div className="fixed z-20 top-0 left-0 right-0 w-full pt-4 bg-[#0f101b]">
         <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center max-w-[1268px] mx-auto px-4`}>
           <div className="menu">
-            <Image className="cursor-pointer max-lg:w-[18px] object-cover" src={menu} alt="menu" />
+            <Image className="cursor-pointer max-lg:w-[18px] object-cover" onClick={() => setShowSidebarMenu(true)} src={menu} alt="menu" />
           </div>
           <Logo />
           <div className="contact-btn">

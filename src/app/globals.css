@@ -22,3 +22,20 @@ body {
 .nav-items button.active {
   color: #ffb10c;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  width: 1px;
+  border-radius: 5px;
+}

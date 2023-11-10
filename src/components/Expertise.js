@@ -55,13 +55,13 @@ const Expertise = () => {
   ];
   return (
     <section className="text-center max-w-[1291px] px-4 mx-auto">
-      <h2 className="font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] text-white mb-[60px]">
+      <h2 data-aos="fade-up" className="font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] text-white mb-[60px]">
         Our Areas <span className="text-yellow">Of Expertise</span>
       </h2>
-      <div className="flex flex-wrap justify-center gap-y-5">
+      <div data-aos="fade-up" className="flex flex-wrap justify-center gap-y-5">
         {expertise.map((list, i) => {
           return (
-            <div key={i} className="px-7 py-5 flex gap-2.5 flex-col">
+            <div key={i} data-aos="fade-up" className="px-7 py-5 flex gap-2.5 flex-col">
               <Image className="mx-auto" src={list.img} alt={list.name} />
               <p className="font-black font-GilroyBlack text-white w-[241px] mx-auto text-2xl">{list.name}</p>
             </div>

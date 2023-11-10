@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import logo from '/public/images/logo.svg';
+
 import menu from '/public/images/menu.svg';
-import Link from 'next/link';
 import { Button as ScrollLink } from 'react-scroll';
 
 import { useAppContext } from '@/context/AppContext';
 import Hero from './Hero';
+import Logo from './Logo';
 
 const Header = ({ activeScrollMenu }) => {
   const { arabicLanguage } = useAppContext();
@@ -23,18 +23,14 @@ const Header = ({ activeScrollMenu }) => {
       <div className="fixed top-0 left-0 right-0 w-full pt-4 bg-[#0f101b]">
         <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center max-w-[1268px] mx-auto px-4`}>
           <div className="menu">
-            <Image className="cursor-pointer" src={menu} alt="menu" />
+            <Image className="cursor-pointer max-lg:w-[18px] object-cover" src={menu} alt="menu" />
           </div>
-          <div className="logo">
-            <Link href={'/'}>
-              <Image src={logo} alt="logo" />
-            </Link>
-          </div>
+          <Logo />
           <div className="contact-btn">
-            <button className="h-16 border border-white rounded-full text-center text-lg text-white capitalize font-semibold px-[50px] py-[18px] hover:bg-white hover:text-textColor"> {arabicLanguage ? 'اتصل بنا' : 'Contact Us'} </button>
+            <button className="lg:h-16 border border-white rounded-full text-center lg:text-lg text-white capitalize font-semibold text-[10px] py-1.5 px-2.5 lg:px-[50px] lg:py-[18px] hover:bg-white hover:text-textColor"> {arabicLanguage ? 'اتصل بنا' : 'Contact Us'} </button>
           </div>
         </nav>
-        <ul className={`nav-items flex-wrap gap-x-[51px] justify-center text-white max-w-[1268px] mx-auto px-4 pb-6 ${activeScrollMenu ? 'flex' : 'hidden'}`}>
+        <ul data-aos="fade-up" className={`nav-items flex-wrap gap-x-[51px] justify-center text-white max-w-[1268px] mx-auto px-4 pb-6 hidden ${activeScrollMenu ? 'lg:flex' : ''}`}>
           <li className="mt-6">
             <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="one" spy={true} smooth={true} offset={-300} duration={500} activeClass="active" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'التحول الرقمي' : 'Digital Transformation'}

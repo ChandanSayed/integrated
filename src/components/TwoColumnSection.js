@@ -19,7 +19,7 @@ const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineO
           <button className="text-textColor text-[10px] leading-tight w-[92px] lg:w-[199px] py-2 text-center lg:text-lg font-semibold bg-yellow hover:bg-yellowHover lg:py-[18px] lg:px-[50px] rounded-full cursor-pointer">{arabicLanguage ? ' يتعلم أكثر' : 'Learn More'}</button>
         </div>
       </div>
-      <div className="blur-[157px] bg-blurColor bg-opacity-25 w-[850px] rounded-[850px] h-[300px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="blur-[157px] bg-blurColor bg-opacity-25 w-full lg:w-[850px] rounded-[850px] h-[300px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
     </section>
   );
 };

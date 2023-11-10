@@ -8,6 +8,7 @@ import StarBg from '@/components/StarBg';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Expertise from '@/components/Expertise';
+import Footer from './Footer';
 
 export default function Home() {
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function Home() {
         <Services />
         <Expertise />
       </main>
+      <Footer />
     </>
   );
 }

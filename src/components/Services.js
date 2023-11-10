@@ -19,10 +19,10 @@ const Services = () => {
   return (
     <div className="max-w-[1268px] px-4 mx-auto text-white">
       <div id="services" name="services">
-        <h2 data-aos="fade-up" className="font-GilroyBlack font-black text-white text-center text-[66px] leading-[86px] capitalize mb-2.5">
+        <h2 data-aos="fade-up" className="font-GilroyBlack font-black text-white text-center text-xl lg:text-[66px] lg:leading-[86px] capitalize mb-2.5">
           Our Services
         </h2>
-        <p data-aos="fade-up" className="text-lg text-white max-w-[978px] mx-auto text-center">
+        <p data-aos="fade-up" className="text-xs lg:text-lg text-white max-w-[978px] mx-auto text-center">
           Our services cover all the digital transformation and information technology aspects, starting from the digital transformation strategy, data strategy, and enterprise architecture to governance, auditing and execution and monitoring of the digital projects, processes and changes.
         </p>
       </div>

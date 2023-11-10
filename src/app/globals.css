@@ -23,6 +23,17 @@ body {
   color: #ffb10c;
 }
 
+@keyframes animStar {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 1px;
 }

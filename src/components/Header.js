@@ -20,7 +20,7 @@ const Header = ({ activeScrollMenu }) => {
 
   return (
     <header className="max-w-[1268px] mx-auto px-4 mt-[104px] relative z-10">
-      <div className="fixed top-0 left-0 right-0 w-full pt-4 bg-black">
+      <div className="fixed top-0 left-0 right-0 w-full pt-4 bg-[#0f101b]">
         <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center max-w-[1268px] mx-auto px-4`}>
           <div className="menu">
             <Image className="cursor-pointer" src={menu} alt="menu" />

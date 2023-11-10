@@ -12,7 +12,7 @@ const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineO
           <Image src={imgSrc} alt="Service Image" />
         </div>
         <div data-aos="fade-up" className="flex flex-col gap-2.5 lg:gap-[30px] max-w-[610px]">
-          <h2 className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-[46px] lg:leading-[56px] ${lineOneColor}`}>
+          <h2 className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] ${lineOneColor}`}>
             {lineOne} <span className={`${lineTwoColor}`}>{lineTwo}</span>
           </h2>
           <p className="text-xs lg:text-lg capitalize text-white">{para}</p>

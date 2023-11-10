@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black scroll-smooth">
+      <body className="bg-[#0f101b] scroll-smooth">
         <AppContextProvider>{children}</AppContextProvider>
       </body>
     </html>

@@ -18,12 +18,17 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu }) => {
     e.target.classList.add('active');
   }
 
+  function openMenu() {
+    setShowSidebarMenu(true);
+    document.body.style.overflow = 'hidden';
+  }
+
   return (
     <header className="max-w-[1268px] mx-auto px-4 mt-[104px] relative z-20">
       <div className="fixed z-20 top-0 left-0 right-0 w-full pt-4 bg-[#0f101b]">
         <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center max-w-[1268px] mx-auto px-4`}>
           <div className="menu">
-            <Image className="cursor-pointer max-lg:w-[18px] object-cover" onClick={() => setShowSidebarMenu(true)} src={menu} alt="menu" />
+            <Image className="cursor-pointer max-lg:w-[18px] object-cover" onClick={openMenu} src={menu} alt="menu" />
           </div>
           <Logo />
           <div className="contact-btn">

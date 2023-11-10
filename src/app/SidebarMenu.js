@@ -108,11 +108,17 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
       location: '/'
     }
   ];
+
+  function closeMenu() {
+    setShowSidebarMenu(false);
+    document.body.style.overflow = '';
+  }
+
   return (
     <>
-      <div className={`w-full lg:w-[501px] fixed z-30 top-0 transition-all duration-500 bottom-0 overflow-y-scroll custom-scrollbar lg:rounded-se-3xl lg:rounded-ee-3xl lg:border border-white border-opacity-30 bg-white bg-opacity-5 backdrop-blur-[10px] ${showSidebarMenu ? 'lg:-left-2' : 'lg:-left-[502px]'} `}>
+      <div className={`w-full max-lg:max-w-[400px] lg:w-[501px] fixed z-30 top-0 transition-all duration-500 bottom-0 overflow-y-scroll custom-scrollbar lg:rounded-se-3xl lg:rounded-ee-3xl lg:border border-white border-opacity-30 bg-white bg-opacity-5 backdrop-blur-[10px] ${showSidebarMenu ? 'left-0 lg:-left-2' : '-left-[400px] lg:-left-[502px]'} `}>
         <div className="sticky right-7 top-12 pr-7 w-full">
-          <svg onClick={() => setShowSidebarMenu(false)} className="cursor-pointer ml-auto" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+          <svg onClick={closeMenu} className="cursor-pointer ml-auto" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
             <path d="M15.4517 17.5117C15.7343 17.8146 16.2089 17.8309 16.5117 17.5483C16.8146 17.2657 16.8309 16.7911 16.5483 16.4883L10.0259 9.5L16.5483 2.51174C16.8309 2.20893 16.8146 1.73433 16.5117 1.45171C16.2089 1.16908 15.7343 1.18545 15.4517 1.48826L9 8.40081L2.54829 1.48826C2.26567 1.18545 1.79107 1.16908 1.48826 1.45171C1.18545 1.73433 1.16908 2.20893 1.45171 2.51174L7.97409 9.5L1.45171 16.4883C1.16908 16.7911 1.18545 17.2657 1.48826 17.5483C1.79107 17.8309 2.26567 17.8146 2.54829 17.5117L9 10.5992L15.4517 17.5117Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
@@ -149,7 +155,7 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
           </div>
         </div>
       </div>
-      <div onClick={() => setShowSidebarMenu(false)} className={`fixed inset-0 z-20 bg-black bg-opacity-50 ${showSidebarMenu ? '' : 'hidden'} `}></div>
+      <div onClick={closeMenu} className={`fixed inset-0 z-20 bg-black bg-opacity-50 ${showSidebarMenu ? '' : 'hidden'} `}></div>
     </>
   );
 };

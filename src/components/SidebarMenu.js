@@ -14,8 +14,10 @@ import service13 from '/public/images/service13.svg';
 import service14 from '/public/images/service14.svg';
 import service15 from '/public/images/service15.svg';
 import Image from 'next/image';
+import { useAppContext } from '@/context/AppContext';
 
 const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
+  const { setArabicLanguage } = useAppContext();
   const services = [
     {
       name: 'Digital Transformation',
@@ -150,8 +152,12 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
             ))}
           </ul>
           <div className="language mt-20 flex gap-4 mb-3">
-            <button className="w-12 h-12 rounded-full border cursor-pointer border-white flex justify-center items-center text-white text-lg leading-none lg:text-[22px]">AR</button>
-            <button className="w-12 h-12 rounded-full border cursor-pointer border-yellow flex justify-center items-center text-yellow text-lg leading-none lg:text-[22px]">EN</button>
+            <button onClick={() => setArabicLanguage(true)} className="w-12 h-12 rounded-full border cursor-pointer border-white flex justify-center items-center text-white text-lg leading-none lg:text-[22px]">
+              AR
+            </button>
+            <button onClick={() => setArabicLanguage(false)} className="w-12 h-12 rounded-full border cursor-pointer border-yellow flex justify-center items-center text-yellow text-lg leading-none lg:text-[22px]">
+              EN
+            </button>
           </div>
         </div>
       </div>

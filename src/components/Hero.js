@@ -8,7 +8,7 @@ const Hero = () => {
   };
 
   return (
-    <div className=" pt-[60px] lg:pt-[95px] pb-[110px] lg:pb-[144px] flex flex-col gap-5 lg:gap-[30px] items-center">
+    <div className="relative pt-[60px] lg:pt-[95px] pb-[110px] lg:pb-[144px] flex flex-col gap-5 lg:gap-[30px] items-center">
       <h1 className="font-GilroyBlack font-black text-white text-center text-[66px] leading-[86px] capitalize max-w-[326px] lg:max-w-[1178px] mx-auto max-lg:text-2xl max-lg:leading-9">
         {arabicLanguage ? 'المستقبل هو التقنيات المتكاملة،' : 'The future is integrated technologies'} <span className="text-yellow">{arabicLanguage ? 'المستقبل هو iIT' : 'the future is iIT'}</span>
       </h1>
@@ -19,6 +19,7 @@ const Hero = () => {
           <path d="M1 1.31616L8.5 9.31616L16 1.31616" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </Button>
+      <div className="blur-[157px] bg-blurColor bg-opacity-25 w-full lg:w-[850px] rounded-[850px] h-[300px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
     </div>
   );
 };

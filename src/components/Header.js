@@ -7,7 +7,7 @@ import { useAppContext } from '@/context/AppContext';
 import Hero from './Hero';
 import Logo from './Logo';
 
-const Header = ({ activeScrollMenu, setShowSidebarMenu }) => {
+const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact }) => {
   const { arabicLanguage } = useAppContext();
 
   const handleSetActive = to => {
@@ -22,6 +22,10 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu }) => {
     setShowSidebarMenu(true);
     document.body.style.overflow = 'hidden';
   }
+  function openContact() {
+    setShowContact(true);
+    document.body.style.overflow = 'hidden';
+  }
 
   return (
     <header className="max-w-[1268px] mx-auto px-4 mt-[104px] relative z-20">
@@ -32,7 +36,10 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu }) => {
           </div>
           <Logo />
           <div className="contact-btn">
-            <button className="lg:h-16 border border-white rounded-full text-center lg:text-lg text-white capitalize font-semibold text-[10px] py-1.5 px-2.5 lg:px-[50px] lg:py-[18px] hover:bg-white hover:text-textColor"> {arabicLanguage ? 'اتصل بنا' : 'Contact Us'} </button>
+            <button onClick={openContact} className="lg:h-16 border border-white rounded-full text-center lg:text-lg text-white capitalize font-semibold text-[10px] py-1.5 px-2.5 lg:px-[50px] lg:py-[18px] hover:bg-white hover:text-textColor">
+              {' '}
+              {arabicLanguage ? 'اتصل بنا' : 'Contact Us'}{' '}
+            </button>
           </div>
         </nav>
         <ul data-aos="fade-up" className={`nav-items flex-wrap gap-x-[51px] justify-center text-white max-w-[1268px] mx-auto px-4 pb-6 hidden ${activeScrollMenu ? 'lg:flex' : ''}`}>

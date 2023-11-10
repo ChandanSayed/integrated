@@ -8,11 +8,13 @@ import StarBg from '@/components/StarBg';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Expertise from '@/components/Expertise';
-import Footer from './Footer';
-import SidebarMenu from './SidebarMenu';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import SidebarMenu from '@/components/SidebarMenu';
 
 export default function Home() {
   const [showSidebarMenu, setShowSidebarMenu] = useState(false);
+  const [showContact, setShowContact] = useState(false);
   const [activeScrollMenu, setActiveScrollMenu] = useState(false);
 
   useEffect(() => {
@@ -40,15 +42,14 @@ export default function Home() {
 
   return (
     <>
-      <Header activeScrollMenu={activeScrollMenu} setShowSidebarMenu={setShowSidebarMenu} />
+      <Header activeScrollMenu={activeScrollMenu} setShowSidebarMenu={setShowSidebarMenu} setShowContact={setShowContact} />
       <main className="relative z-10">
-        {/* <h2 className="font-quickSand text-white">Hello</h2>
-        <h2 className="font-GilroyBlack text-white text-center text-[66px] leading-[86px] capitalize">The future is integrated technologies the future is iIT</h2> */}
         <Services />
         <Expertise />
       </main>
       <Footer />
       <SidebarMenu showSidebarMenu={showSidebarMenu} setShowSidebarMenu={setShowSidebarMenu} />
+      <Contact showContact={showContact} setShowContact={setShowContact} />
       <StarBg />
     </>
   );

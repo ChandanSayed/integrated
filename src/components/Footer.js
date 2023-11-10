@@ -32,24 +32,27 @@ const Footer = () => {
       location: '/'
     }
   ];
+
   return (
     <footer className="py-10 relative z-10 mt-32">
       <div className="flex flex-col gap-[30px] items-center justify-center mb-[60px] relative z-10">
         <Logo />
         <ul className="flex flex-col items-center lg:flex-row gap-5">
-          {links.map((link, i) => (
-            <li key={i}>
-              <a className="text-white" href={link.location}>
-                {link.name}
-              </a>
-            </li>
-          ))}
+          {links.map((link, i) => {
+            return (
+              <li key={i}>
+                <a className="text-white" href={link.location}>
+                  {link.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className="bg-black blur-[92px] absolute inset-0"></div>
       <div className="footer-bottom max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30 relative z-10">
         <div className="flex flex-col items-center lg:flex-row gap-8 justify-between">
-          <p className={`text-[10px] lg:text-sm text-white text-center ${poppins.className}`}>© Copyright {new Date().getFullYear}, All Rights Reserved by Logic Saint</p>
+          <p className={`text-[10px] lg:text-sm text-white text-center ${poppins.className}`}>© Copyright {new Date().getFullYear()}, All Rights Reserved by Logic Saint</p>
           <p className="text-[10px] lg:text-sm text-white">Integrated@gmail.com</p>
         </div>
       </div>

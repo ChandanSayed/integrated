@@ -2,7 +2,7 @@ import { useAppContext } from '@/context/AppContext';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name }) => {
+const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineOneColor, lineTwoColor }) => {
   const { arabicLanguage } = useAppContext();
 
   return (
@@ -12,8 +12,8 @@ const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name }) => 
           <Image src={imgSrc} alt="Service Image" />
         </div>
         <div data-aos="fade-up" className="flex flex-col gap-2.5 lg:gap-[30px] max-w-[610px]">
-          <h2 className="max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-[46px] lg:leading-[56px] text-white">
-            {lineOne} <span className="text-yellow">{lineTwo}</span>
+          <h2 className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-[46px] lg:leading-[56px] ${lineOneColor}`}>
+            {lineOne} <span className={`${lineTwoColor}`}>{lineTwo}</span>
           </h2>
           <p className="text-xs lg:text-lg capitalize text-white">{para}</p>
           <button className="text-textColor text-[10px] leading-tight w-[92px] lg:w-[199px] py-2 text-center lg:text-lg font-semibold bg-yellow hover:bg-yellowHover lg:py-[18px] lg:px-[50px] rounded-full cursor-pointer">{arabicLanguage ? ' يتعلم أكثر' : 'Learn More'}</button>

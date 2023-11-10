@@ -2,115 +2,122 @@ import Image from 'next/image';
 import logo from '/public/images/logo.svg';
 import menu from '/public/images/menu.svg';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
+
 import { useAppContext } from '@/context/AppContext';
+import Hero from './Hero';
+import { useRef } from 'react';
+
+import './Header.css';
 
 const Header = () => {
   const { arabicLanguage } = useAppContext();
+  const currentElement = useRef();
+
+  const handleSetActive = to => {
+    console.log(to);
+  };
+
+  function handleScrollLink(e) {
+    e.target.classList.add('active');
+  }
 
   return (
-    <header className="max-w-[1268px] mx-auto px-4 pt-4 relative z-10">
-      <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center`}>
-        <div className="menu">
-          <Image className="cursor-pointer" src={menu} alt="menu" />
-        </div>
-        <div className="logo">
-          <Link href={'/'}>
-            <Image src={logo} alt="logo" />
-          </Link>
-        </div>
-        <div className="contact-btn">
-          <button className="h-16 border border-white rounded-full text-center text-lg text-white capitalize font-semibold px-[50px] py-[18px] hover:bg-white hover:text-textColor"> {arabicLanguage ? 'اتصل بنا' : 'Contact Us'} </button>
-        </div>
-      </nav>
-      <ul className="nav-items flex flex-wrap gap-x-[51px] justify-center text-white">
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'التحول الرقمي' : 'Digital Transformation'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'رؤية البيانات' : 'Data Insight'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'BPA وRPA' : 'BPA & RPA'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'عصام' : 'EA'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'حوكمة تقنية المعلومات' : 'IT Governance'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'تدقيق تكنولوجيا المعلومات' : ' IT Auditing'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'غرفة البحرين لتسوية المنازعات' : 'BCDR'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'را/م' : 'RA/RM'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'حلول الأعمال' : 'Cybersecurity'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'VCIO' : ' Business Solutions'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'VCISO' : 'VCIO'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'سحاب' : 'VCISO'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'التكامل والتطوير' : 'Cloud'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'ديف أوبس' : 'Integration & Development'}
-          </a>
-        </li>
-        <li className="mt-[30px]">
-          <a href="#" className="font-Gilroy text-lg text-white hover:text-blurColor">
-            {arabicLanguage ? 'الأمن الإلكتروني' : 'DevOps'}
-          </a>
-        </li>
-      </ul>
-      <div className="pt-[95px] pb-[144px] flex flex-col gap-[30px] items-center">
-        <h1 className="font-GilroyBlack text-white text-center text-[66px] leading-[86px] capitalize">
-          The future is integrated technologies <span className="text-yellow block">the future is iIT</span>
-        </h1>
-        <p className="capitalize text-lg text-white">We are a global team of technologists that propels enterprises forward with digital products, platforms, services, and processes.</p>
-        <button className="text-textColor text-lg font-semibold bg-yellow hover:bg-yellowHover py-[18px] px-[50px] rounded-full">
-          Learn More{' '}
-          <svg className="inline-block ml-2.5" xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11" fill="none">
-            <path d="M1 1.31616L8.5 9.31616L16 1.31616" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
+    <header className="max-w-[1268px] mx-auto px-4 mt-[104px] relative z-10">
+      <div className="fixed top-0 left-0 right-0 w-full pt-4 bg-black">
+        <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center max-w-[1268px] mx-auto px-4`}>
+          <div className="menu">
+            <Image className="cursor-pointer" src={menu} alt="menu" />
+          </div>
+          <div className="logo">
+            <Link href={'/'}>
+              <Image src={logo} alt="logo" />
+            </Link>
+          </div>
+          <div className="contact-btn">
+            <button className="h-16 border border-white rounded-full text-center text-lg text-white capitalize font-semibold px-[50px] py-[18px] hover:bg-white hover:text-textColor"> {arabicLanguage ? 'اتصل بنا' : 'Contact Us'} </button>
+          </div>
+        </nav>
+        <ul className="nav-items flex-wrap gap-x-[51px] justify-center text-white max-w-[1268px] mx-auto px-4 pb-6 hidden">
+          <li className="mt-6">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="one" spy={true} smooth={true} offset={-300} duration={500} activeClass="active" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'التحول الرقمي' : 'Digital Transformation'}
+            </ScrollLink>
+          </li>
+          <li className="mt-6">
+            <ScrollLink ref={currentElement} onSetActive={handleSetActive} to="two" spy={true} smooth={true} offset={-300} duration={500} activeClass="active" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'رؤية البيانات' : 'Data Insight'}
+            </ScrollLink>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'BPA وRPA' : 'BPA & RPA'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'عصام' : 'EA'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'حوكمة تقنية المعلومات' : 'IT Governance'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'تدقيق تكنولوجيا المعلومات' : ' IT Auditing'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'غرفة البحرين لتسوية المنازعات' : 'BCDR'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'را/م' : 'RA/RM'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'حلول الأعمال' : 'Cybersecurity'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'VCIO' : ' Business Solutions'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'VCISO' : 'VCIO'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'سحاب' : 'VCISO'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'التكامل والتطوير' : 'Cloud'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'ديف أوبس' : 'Integration & Development'}
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#" className="font-Gilroy text-lg text-white hover:text-[#787878] cursor-pointer">
+              {arabicLanguage ? 'الأمن الإلكتروني' : 'DevOps'}
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <Hero />
     </header>
   );
 };

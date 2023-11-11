@@ -1,5 +1,8 @@
+import { useAppContext } from '@/context/AppContext';
+
 const Contact = ({ showContact, setShowContact }) => {
-  const inputStyle = { border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)' };
+  const { arabicLanguage } = useAppContext();
+  const inputStyle = { border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)', direction: arabicLanguage ? 'rtl' : 'ltr' };
 
   function closeContact() {
     document.body.style.overflow = '';
@@ -16,80 +19,80 @@ const Contact = ({ showContact, setShowContact }) => {
           </svg>
         </div>
         <h2 className="font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] text-white mb-2.5 lg:mb-5">
-          Contact <span className="text-yellow">IIT</span>
+          {arabicLanguage ? 'اتصل بـ ' : 'Contact'} <span className="text-yellow">IIT</span>
         </h2>
-        <p className="text-xs lg:text-lg text-white mx-auto text-center pb-[30px] lg:pb-[60px]">We’d love to hear from you. Please fill out this form.</p>
-        <form action="#" className="form flex flex-col gap-[30px]">
+        <p className="text-xs lg:text-lg text-white mx-auto text-center pb-[30px] lg:pb-[60px]">{arabicLanguage ? 'نحن نحب أن نسمع منك. يرجى ملء هذا النموذج.' : 'We’d love to hear from you. Please fill out this form.'} </p>
+        <form action="#" className={`form flex flex-col gap-[30px] ${arabicLanguage ? 'text-right' : ''}`}>
           <div className="flex flex-col gap-[30px] lg:gap-6">
-            <div className="flex flex-col lg:flex-row gap-[30px]">
+            <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
               <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="fName" className="font-Gilroy font-medium text-sm text-white">
-                  First Name
+                <label htmlFor="fName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'الاسم الأول' : 'First name'}
                 </label>
-                <input style={inputStyle} type="text" id="fName" name="fName" placeholder="First name" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full" />
+                <input style={inputStyle} type="text" id="fName" name="fName" placeholder={`${arabicLanguage ? 'الاسم الأول' : 'First name'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="lName" className="font-Gilroy font-medium text-sm text-white">
-                  Last Name
+                <label htmlFor="lName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'اسم العائلة' : 'Last Name'}
                 </label>
-                <input style={inputStyle} type="text" id="lName" name="lName" placeholder="Last name" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full" />
+                <input style={inputStyle} type="text" id="lName" name="lName" placeholder={`${arabicLanguage ? 'اسم العائلة' : 'Last Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+              </div>
+            </div>
+            <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+              <div className="flex flex-col gap-1.5 items-start flex-1">
+                <label htmlFor="cName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'اسم الشركة' : 'Company Name'}
+                </label>
+                <input style={inputStyle} type="text" id="cName" name="cName" placeholder={`${arabicLanguage ? 'اسم الشركة' : 'Company Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+              </div>
+              <div className="flex flex-col gap-1.5 items-start flex-1">
+                <label htmlFor="jTitle" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}
+                </label>
+                <input style={inputStyle} type="text" id="jTitle" name="jTitle" placeholder={`${arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+              </div>
+            </div>
+            <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+              <div className="flex flex-col gap-1.5 items-start flex-1">
+                <label htmlFor="pNumber" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'رقم التليفون' : 'Phone number'}
+                </label>
+                <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+              </div>
+              <div className="flex flex-col gap-1.5 items-start flex-1">
+                <label htmlFor="email" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'بريد إلكتروني' : 'Email'}
+                </label>
+                <input style={inputStyle} type="text" id="email" name="email" placeholder={`${arabicLanguage ? 'you@company.com' : 'you@company.com'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-[30px]">
               <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="cName" className="font-Gilroy font-medium text-sm text-white">
-                  Company Name
+                <label htmlFor="Country" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'دولة' : 'Country'}
                 </label>
-                <input style={inputStyle} type="text" id="cName" name="cName" placeholder="Company Name" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full" />
-              </div>
-              <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="jTitle" className="font-Gilroy font-medium text-sm text-white">
-                  Job Title
-                </label>
-                <input style={inputStyle} type="text" id="jTitle" name="jTitle" placeholder="Job Title" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full" />
-              </div>
-            </div>
-            <div className="flex flex-col lg:flex-row gap-[30px]">
-              <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="pNumber" className="font-Gilroy font-medium text-sm text-white">
-                  Phone number
-                </label>
-                <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full" />
-              </div>
-              <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="email" className="font-Gilroy font-medium text-sm text-white">
-                  Email
-                </label>
-                <input style={inputStyle} type="text" id="email" name="email" placeholder="you@company.com" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full" />
-              </div>
-            </div>
-            <div className="flex flex-col lg:flex-row gap-[30px]">
-              <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="Country" className="font-Gilroy font-medium text-sm text-white">
-                  Country
-                </label>
-                {/* <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full" /> */}
-                <select style={inputStyle} name="Country" id="Country" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full">
-                  <option value="Country">Country</option>
+                {/* <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `} /> */}
+                <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}>
+                  <option value="Country">{arabicLanguage ? 'دولة' : 'Country'}</option>
                 </select>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-[30px]">
               <div className="flex flex-col gap-1.5 items-start flex-1">
-                <label htmlFor="message" className="font-Gilroy font-medium text-sm text-white">
-                  Message
+                <label htmlFor="message" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
+                  {arabicLanguage ? 'رسالة' : 'Message'}
                 </label>
-                {/* <select style={inputStyle} name="Country" id="Country" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full">
+                {/* <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `}>
                 <option value="Country">Country</option>
               </select> */}
-                <textarea name="message" id="message" cols="30" rows="5" className="p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full"></textarea>
+                <textarea name="message" id="message" cols="30" rows="5" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}></textarea>
               </div>
             </div>
-            <div className="flex items-start">
-              <input type="checkbox" className="mt-1 mr-3" /> <p className="text-xs lg:text-sm text-white text-left">By completing this form you agree to IIT storing your information so that you can receive information related to our services. Read more about how we manage your personal data</p>
+            <div className={`flex items-start ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+              <input type="checkbox" className={`${arabicLanguage ? 'mt-1 ml-3' : 'mt-1 mr-3'}`} /> <p className={`text-xs lg:text-sm text-white ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'من خلال إكمال هذا النموذج، فإنك توافق على قيام IIT بتخزين معلوماتك حتى تتمكن من تلقي المعلومات المتعلقة بخدماتنا. اقرأ المزيد حول كيفية إدارتنا لبياناتك الشخصية' : 'By completing this form you agree to IIT storing your information so that you can receive information related to our services. Read more about how we manage your personal data'}</p>
             </div>
             <div className="flex-1">
-              <button className="text-textColor bg-yellow hover:bg-yellowHover text-[10px] text-center py-2 lg:py-[18px] lg:text-lg w-full rounded-full">Submit</button>
+              <button className="text-textColor bg-yellow hover:bg-yellowHover text-[10px] text-center py-2 lg:py-[18px] lg:text-lg w-full rounded-full">{arabicLanguage ? 'يُقدِّم' : 'Submit'}</button>
             </div>
           </div>
         </form>

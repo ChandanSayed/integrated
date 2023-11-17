@@ -1,7 +1,13 @@
 import Logo from '@/components/Logo';
 import { useAppContext } from '@/context/AppContext';
 import { Poppins } from 'next/font/google';
+import Image from 'next/image';
 const poppins = Poppins({ subsets: ['latin'], weight: '400' });
+
+import x from '/public/images/x.svg';
+import li from '/public/images/in.svg';
+import fb from '/public/images/fb.svg';
+
 const Footer = () => {
   const { arabicLanguage } = useAppContext();
   const links = [
@@ -56,6 +62,23 @@ const Footer = () => {
               </li>
             );
           })}
+        </ul>
+        <ul className="flex justify-center gap-2">
+          <li>
+            <a href="https://www.linkedin.com/">
+              <Image src={li} alt="LinkedIn" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/">
+              <Image src={fb} alt="Facebook" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com/">
+              <Image src={x} alt="Twitter" />
+            </a>
+          </li>
         </ul>
       </div>
       <div className="bg-black blur-[92px] absolute inset-0"></div>

@@ -20,6 +20,7 @@ import { Button } from 'react-scroll';
 
 const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
   const { arabicLanguage, setArabicLanguage } = useAppContext();
+  const [toggleSegments, setToggleSegments] = useState(false);
   const [checkLanguage, setCheckLanguage] = useState(typeof window !== 'undefined' ? localStorage.getItem('ArabicLanguage') : 'false');
 
   useEffect(() => {
@@ -171,6 +172,10 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
     localStorage.removeItem('ArabicLanguage');
   }
 
+  function handleDrop() {
+    setToggleSegments(prev => !prev);
+  }
+
   return (
     <>
       <div className={`w-full max-lg:max-w-[400px] lg:w-[501px] fixed z-30 top-0 transition-all duration-500 bottom-0 overflow-y-scroll custom-scrollbar ${arabicLanguage ? 'lg:rounded-ss-3xl lg:rounded-es-3xl' : 'lg:rounded-se-3xl lg:rounded-ee-3xl'} lg:border border-white border-opacity-30 bg-white bg-opacity-5 backdrop-blur-[10px] ${showSidebarMenu ? `${arabicLanguage ? 'right-0 lg:-right-2' : 'left-0 lg:-left-2'}` : `${arabicLanguage ? '-right-[400px] lg:-right-[502px]' : '-left-[400px] lg:-left-[502px]'}`} `}>
@@ -194,8 +199,22 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
             })}
           </div>
           <ul className={`flex flex-col ${arabicLanguage ? 'text-right pl-11 lg:pl-12' : 'pr-11 lg:pr-12'} items-start gap-1`}>
-            <li className="border-b border-white border-opacity-10 flex-1 w-full">
-              <small className="text-white capitalize font-Gilroy text-xs leading-[41px] lg:leading-[50px] lg:text-base"> {arabicLanguage ? 'اتصل بنا' : 'Segments'} </small>
+            <li onClick={handleDrop} className={`border-b border-white border-opacity-10 flex-1 w-full cursor-pointer`}>
+              <div className={`flex items-center justify-between ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+                <small className="text-white capitalize font-Gilroy text-xs leading-[41px] lg:leading-[50px] lg:text-base"> {arabicLanguage ? 'اتصل بنا' : 'Segments'} </small>{' '}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+                  <path d="M8 9L15.7942 0H0.205771L8 9Z" fill="white" />
+                </svg>
+              </div>
+              <ul className={`${toggleSegments ? 'block' : 'hidden'}`}>
+                {links.map((link, i) => (
+                  <li key={i} className="border-b border-white border-opacity-10 flex-1 w-full">
+                    <a className="text-white opacity-70 capitalize font-Gilroy text-[10px] leading-[41px] lg:leading-[50px] lg:text-xs" href={link.location}>
+                      {arabicLanguage ? link.arabicName : link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </li>
 
             {links.map((link, i) => (

@@ -23,6 +23,20 @@ body {
   color: #ffb10c;
 }
 
+.stars-animate.stars-animate-sticky-top:before {
+  content: '';
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-bottom: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background: #112946;
+  background: radial-gradient(ellipse closest-side at center, #112946 0, #0b1a2b 36%, #000 100%);
+  transition: opacity 0.3s ease-in-out;
+}
+
 @keyframes animStar {
   0% {
     -webkit-transform: translateY(0);

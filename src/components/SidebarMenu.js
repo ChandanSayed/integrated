@@ -15,84 +15,107 @@ import service14 from '/public/images/service14.svg';
 import service15 from '/public/images/service15.svg';
 import Image from 'next/image';
 import { useAppContext } from '@/context/AppContext';
+import { useEffect, useState } from 'react';
+import { Button } from 'react-scroll';
 
 const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
   const { arabicLanguage, setArabicLanguage } = useAppContext();
+  const [checkLanguage, setCheckLanguage] = useState(typeof window !== 'undefined' ? localStorage.getItem('ArabicLanguage') : 'false');
+
+  useEffect(() => {
+    setArabicLanguage(checkLanguage);
+  }, []);
+
   const services = [
     {
       name: 'Digital Transformation',
       arabicName: 'التحول الرقمي',
+      target: 'one',
       img: service1
     },
     {
       name: 'Data Insight',
       arabicName: 'رؤية البيانات',
+      target: 'two',
       img: service2
     },
     {
       name: 'BPA & RPA',
       arabicName: 'BPA وRPA',
+      target: 'three',
       img: service3
     },
     {
       name: 'EA',
       arabicName: 'عصام      ',
+      target: 'four',
       img: service4
     },
     {
       name: 'IT Governance',
       arabicName: `حوكمة تقنية
       المعلومات`,
+      target: 'five',
       img: service5
     },
     {
       name: 'IT Auditing',
       arabicName: 'تدقيق تكنولوجيا المعلومات',
+      target: 'six',
       img: service6
     },
     {
       name: 'Business Solutions',
       arabicName: 'حلول الأعمال',
+      target: 'seven',
       img: service7
     },
     {
       name: 'RA/RM',
       arabicName: 'را/م',
+      target: 'eight',
       img: service8
     },
     {
       name: 'Cybersecurity',
       arabicName: 'الأمن الإلكتروني',
+      target: 'nine',
       img: service9
     },
     {
       name: 'BCDR',
       arabicName: 'BCDR',
+      target: 'ten',
       img: service10
     },
     {
       name: 'VCIO',
       arabicName: 'VCIO',
+      target: 'eleven',
       img: service11
     },
     {
       name: 'VCISO',
       arabicName: 'VCISO',
+      target: 'twelve',
       img: service12
     },
     {
       name: 'Cloud',
       arabicName: 'سحاب',
+      target: 'thirteen',
       img: service13
     },
     {
       name: 'Integration & Development',
       arabicName: 'التكامل والتطوير',
+      target: 'fourteen',
       img: service14
     },
     {
       name: 'DevOps',
       arabicName: 'ديف أوبس',
+      target: 'fifteen',
       img: service15
     }
   ];
@@ -139,6 +162,15 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
     document.body.style.overflow = '';
   }
 
+  function handleArabic() {
+    setArabicLanguage(true);
+    localStorage.setItem('ArabicLanguage', JSON.stringify(true));
+  }
+  function handleEnglish() {
+    setArabicLanguage(false);
+    localStorage.removeItem('ArabicLanguage');
+  }
+
   return (
     <>
       <div className={`w-full max-lg:max-w-[400px] lg:w-[501px] fixed z-30 top-0 transition-all duration-500 bottom-0 overflow-y-scroll custom-scrollbar ${arabicLanguage ? 'lg:rounded-ss-3xl lg:rounded-es-3xl' : 'lg:rounded-se-3xl lg:rounded-ee-3xl'} lg:border border-white border-opacity-30 bg-white bg-opacity-5 backdrop-blur-[10px] ${showSidebarMenu ? `${arabicLanguage ? 'right-0 lg:-right-2' : 'left-0 lg:-left-2'}` : `${arabicLanguage ? '-right-[400px] lg:-right-[502px]' : '-left-[400px] lg:-left-[502px]'}`} `}>
@@ -152,12 +184,12 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
           <div className={`grid grid-cols-3 gap-6 pb-16 lg:pb-20 ${arabicLanguage ? 'pl-11 lg:pl-[50px]' : 'pr-11 lg:pr-[50px]'} `}>
             {services.map((service, i) => {
               return (
-                <div key={i} className="text-center">
+                <Button key={i} className="text-center" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} to={service.target}>
                   <div className="h-[56px] w-[59px] lg:w-[71px] lg:h-[67px] rounded-md mx-auto bg-white bg-opacity-5 border border-white border-opacity-20 flex items-center justify-center">
                     <Image src={service.img} alt="Service Icon" />
                   </div>
                   <p className="max-w-[100px] lg:max-w-[121px] mx-auto font-Gilroy font-semibold mt-4 lg:mt-2.5 text-xs lg:text-sm text-yellow">{arabicLanguage ? service.arabicName : service.name}</p>
-                </div>
+                </Button>
               );
             })}
           </div>
@@ -175,10 +207,10 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
             ))}
           </ul>
           <div className={`language mt-20 flex gap-4 mb-3 ${arabicLanguage ? 'justify-end' : ''} `}>
-            <button onClick={() => setArabicLanguage(true)} className="w-12 h-12 rounded-full border cursor-pointer border-white flex justify-center items-center text-white text-lg leading-none lg:text-[22px]">
+            <button onClick={handleArabic} className="w-12 h-12 rounded-full border cursor-pointer border-white flex justify-center items-center text-white text-lg leading-none lg:text-[22px]">
               AR
             </button>
-            <button onClick={() => setArabicLanguage(false)} className="w-12 h-12 rounded-full border cursor-pointer border-yellow flex justify-center items-center text-yellow text-lg leading-none lg:text-[22px]">
+            <button onClick={handleEnglish} className="w-12 h-12 rounded-full border cursor-pointer border-yellow flex justify-center items-center text-yellow text-lg leading-none lg:text-[22px]">
               EN
             </button>
           </div>

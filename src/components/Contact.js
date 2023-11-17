@@ -11,7 +11,7 @@ const Contact = ({ showContact, setShowContact }) => {
 
   return (
     <>
-      <div onClick={closeContact} className={`fixed inset-0 z-20 bg-black bg-opacity-50 ${showContact ? '' : 'hidden'} `}></div>
+      <div className={`fixed inset-0 z-20 bg-black bg-opacity-50 ${showContact ? '' : 'hidden'} `}></div>
       <div className={`max-w-[823px] w-full lg:rounded-lg mx-auto text-center fixed z-20 left-1/2 transform -translate-x-1/2 top-0 bottom-0 py-20 backdrop-blur-[10px] px-4 lg:px-16 overflow-y-scroll custom-scrollbar ${showContact ? '' : 'hidden'}`}>
         <div className="sticky right-0 top-0 lg:top-12 pr-0 w-full">
           <svg onClick={closeContact} className="cursor-pointer ml-auto" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">

@@ -19,7 +19,7 @@ import { useAppContext } from '@/context/AppContext';
 const Services = () => {
   const { arabicLanguage } = useAppContext();
   return (
-    <div className="max-w-[1268px] px-4 mx-auto text-white">
+    <div className="container xl:max-w-[1268px] px-4 mx-auto text-white">
       <div id="services" name="services">
         <h2 data-aos="fade-up" className="font-GilroyBlack font-black text-white text-center text-xl lg:text-[66px] lg:leading-[86px] capitalize mb-2.5">
           {arabicLanguage ? 'خدماتنا' : 'Our Services'}

@@ -1,11 +1,12 @@
 import { useAppContext } from '@/context/AppContext';
 import Image from 'next/image';
+import { Element } from 'react-scroll';
 
 const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineOneColor, lineTwoColor }) => {
   const { arabicLanguage } = useAppContext();
 
   return (
-    <section className="relative" name={name}>
+    <Element className="relative" name={name}>
       <div className="blur-[157px] bg-blurColor bg-opacity-25 w-full lg:w-[850px] rounded-[850px] h-[300px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
       <div className={`flex flex-col gap-[30px] lg:gap-14 items-center justify-center relative z-10 ${classes}`}>
         <div className="img" data-aos="fade-up">
@@ -22,7 +23,7 @@ const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineO
           <button className="text-textColor text-[10px] leading-tight w-[92px] lg:w-[199px] py-2 text-center lg:text-lg font-semibold bg-yellow hover:bg-yellowHover lg:py-[18px] lg:px-[50px] rounded-full cursor-pointer">{arabicLanguage ? ' يتعلم أكثر' : 'Learn More'}</button>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

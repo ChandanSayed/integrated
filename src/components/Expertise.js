@@ -66,7 +66,7 @@ const Expertise = () => {
     }
   ];
   return (
-    <section className="text-center max-w-[1291px] px-4 mx-auto">
+    <section className="text-center container xl:max-w-[1291px] px-4 mx-auto">
       <h2 data-aos="fade-up" className="font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] text-white mb-[60px]">
         {arabicLanguage ? 'مجالات ' : 'Our Areas'} <span className="text-yellow">{arabicLanguage ? 'خبرتنا' : 'Of Expertise'}</span>
       </h2>

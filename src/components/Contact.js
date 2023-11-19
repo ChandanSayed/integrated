@@ -1,7 +1,6 @@
 import { useAppContext } from '@/context/AppContext';
 
-const Contact = ({ showContact, setShowContact }) => {
-  const { arabicLanguage } = useAppContext();
+const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
   const inputStyle = { border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)', direction: arabicLanguage ? 'rtl' : 'ltr' };
 
   function closeContact() {
@@ -18,7 +17,7 @@ const Contact = ({ showContact, setShowContact }) => {
             <path d="M15.4517 17.5117C15.7343 17.8146 16.2089 17.8309 16.5117 17.5483C16.8146 17.2657 16.8309 16.7911 16.5483 16.4883L10.0259 9.5L16.5483 2.51174C16.8309 2.20893 16.8146 1.73433 16.5117 1.45171C16.2089 1.16908 15.7343 1.18545 15.4517 1.48826L9 8.40081L2.54829 1.48826C2.26567 1.18545 1.79107 1.16908 1.48826 1.45171C1.18545 1.73433 1.16908 2.20893 1.45171 2.51174L7.97409 9.5L1.45171 16.4883C1.16908 16.7911 1.18545 17.2657 1.48826 17.5483C1.79107 17.8309 2.26567 17.8146 2.54829 17.5117L9 10.5992L15.4517 17.5117Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <h2 className="font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] text-white mb-2.5 lg:mb-5">
+        <h2 className="font-black font-GilroyBlack capitalize text-xl lg:text-4xl lg:leading-[56px] text-white mb-2.5 lg:mb-5">
           {arabicLanguage ? 'اتصل بـ ' : 'Contact'} <span className="text-yellow">IIT</span>
         </h2>
         <p className="text-xs lg:text-lg text-white mx-auto text-center pb-[30px] lg:pb-[60px]">{arabicLanguage ? 'نحن نحب أن نسمع منك. يرجى ملء هذا النموذج.' : 'We’d love to hear from you. Please fill out this form.'} </p>
@@ -92,7 +91,7 @@ const Contact = ({ showContact, setShowContact }) => {
               <input type="checkbox" className={`${arabicLanguage ? 'mt-1 ml-3' : 'mt-1 mr-3'}`} /> <p className={`text-xs lg:text-sm text-white ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'من خلال إكمال هذا النموذج، فإنك توافق على قيام IIT بتخزين معلوماتك حتى تتمكن من تلقي المعلومات المتعلقة بخدماتنا. اقرأ المزيد حول كيفية إدارتنا لبياناتك الشخصية' : 'By completing this form you agree to IIT storing your information so that you can receive information related to our services. Read more about how we manage your personal data'}</p>
             </div>
             <div className="flex-1">
-              <button className="text-textColor bg-yellow hover:bg-yellowHover text-[10px] text-center py-2 lg:py-[18px] lg:text-lg w-full rounded-full">{arabicLanguage ? 'يُقدِّم' : 'Submit'}</button>
+              <button className="text-textColor bg-yellow hover:bg-yellowHover text-[10px] text-center py-2 lg:py-3 lg:text-lg w-full rounded-full">{arabicLanguage ? 'يُقدِّم' : 'Submit'}</button>
             </div>
           </div>
         </form>

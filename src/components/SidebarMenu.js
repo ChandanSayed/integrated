@@ -14,18 +14,18 @@ import service13 from '/public/images/service13.svg';
 import service14 from '/public/images/service14.svg';
 import service15 from '/public/images/service15.svg';
 import Image from 'next/image';
-import { useAppContext } from '@/context/AppContext';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-scroll';
+import { useRouter } from 'next/navigation';
 
-const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
-  const { arabicLanguage, setArabicLanguage } = useAppContext();
+const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage }) => {
   const [toggleSegments, setToggleSegments] = useState(false);
   const [checkLanguage, setCheckLanguage] = useState(typeof window !== 'undefined' ? localStorage.getItem('ArabicLanguage') : 'false');
+  const router = useRouter();
 
-  useEffect(() => {
-    setArabicLanguage(checkLanguage);
-  }, []);
+  // useEffect(() => {
+  //   setArabicLanguage(checkLanguage);
+  // }, []);
 
   const services = [
     {
@@ -157,6 +157,48 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
       location: '/'
     }
   ];
+  const expertise = [
+    {
+      name: 'Healthcare and data science',
+      arabicName: 'الرعاية الصحية وعلوم البيانات'
+    },
+    {
+      name: 'Finance And Accounting',
+      arabicName: 'المالية والمحاسبة'
+    },
+    {
+      name: 'Education and learning',
+      arabicName: 'التعليم والتعلم'
+    },
+    {
+      name: 'Manufacturing and Energy',
+      arabicName: 'التصنيع والطاقة'
+    },
+    {
+      name: 'Retail and Logistics',
+      arabicName: 'البيع بالتجزئة والخدمات اللوجستية'
+    },
+    {
+      name: 'Lifestyle, travel and Hospitality',
+      arabicName: 'نمط الحياة والسفر والضيافة'
+    },
+    {
+      name: 'Nonprofit',
+      arabicName: 'غير ربحية'
+    },
+    {
+      name: 'Public Sector',
+      arabicName: 'القطاع العام'
+    },
+    {
+      name: 'Communication & Media      ',
+      arabicName: 'الاتصال والإعلام'
+    },
+    {
+      name: 'High Tech',
+      arabicName: 'التكنولوجيا العالية'
+    }
+  ];
 
   function closeMenu() {
     setShowSidebarMenu(false);
@@ -164,12 +206,12 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
   }
 
   function handleArabic() {
-    setArabicLanguage(true);
-    localStorage.setItem('ArabicLanguage', JSON.stringify(true));
+    router.push('/ar');
+    document.body.style.overflow = '';
   }
   function handleEnglish() {
-    setArabicLanguage(false);
-    localStorage.removeItem('ArabicLanguage');
+    router.push('/');
+    document.body.style.overflow = '';
   }
 
   function handleDrop() {
@@ -185,12 +227,12 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
           </svg>
         </div>
         <div className={`${arabicLanguage ? 'pr-[30px] lg:pr-[66px]' : 'pl-[30px] lg:pl-[66px]'}`}>
-          <h2 className={`font-GilroyBlack font-black text-[36px] lg:text-[44px] text-white pt-[90px] mb-7 ${arabicLanguage ? 'text-right' : ''} `}>IIT</h2>
+          <h2 className={`font-GilroyBlack font-black text-2xl lg:text-4xl text-white pt-16 mb-7 ${arabicLanguage ? 'text-right' : ''} `}>IIT</h2>
           <div className={`grid grid-cols-3 gap-6 pb-16 lg:pb-20 ${arabicLanguage ? 'pl-11 lg:pl-[50px]' : 'pr-11 lg:pr-[50px]'} `}>
             {services.map((service, i) => {
               return (
                 <Button key={i} className="text-center" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} to={service.target}>
-                  <div className="h-[56px] w-[59px] lg:w-[71px] lg:h-[67px] rounded-md mx-auto bg-white bg-opacity-5 border border-white border-opacity-20 flex items-center justify-center">
+                  <div className="h-[56px] w-[59px] lg:w-[71px] lg:h-[67px] rounded-md mx-auto bg-white bg-opacity-5 hover:bg-opacity-20 border border-white border-opacity-20 flex items-center justify-center">
                     <Image src={service.img} alt="Service Icon" />
                   </div>
                   <p className="max-w-[100px] lg:max-w-[121px] mx-auto font-Gilroy font-semibold mt-4 lg:mt-2.5 text-xs lg:text-sm text-yellow">{arabicLanguage ? service.arabicName : service.name}</p>
@@ -207,7 +249,7 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu }) => {
                 </svg>
               </div>
               <ul className={`${toggleSegments ? 'block' : 'hidden'}`}>
-                {links.map((link, i) => (
+                {expertise.map((link, i) => (
                   <li key={i} className="border-b border-white border-opacity-10 flex-1 w-full">
                     <a className="text-white opacity-70 capitalize font-Gilroy text-[10px] leading-[41px] lg:leading-[50px] lg:text-xs" href={link.location}>
                       {arabicLanguage ? link.arabicName : link.name}

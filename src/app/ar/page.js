@@ -44,15 +44,15 @@ export default function Home() {
 
   return (
     <>
-      <Header activeScrollMenu={activeScrollMenu} setShowSidebarMenu={setShowSidebarMenu} setShowContact={setShowContact} arabicLanguage={arabicLanguage} />
+      <Header activeScrollMenu={activeScrollMenu} setShowSidebarMenu={setShowSidebarMenu} setShowContact={setShowContact} arabicLanguage={!arabicLanguage} />
       <StarBg />
       <main className="relative z-10">
-        <Services arabicLanguage={arabicLanguage} />
-        <Expertise arabicLanguage={arabicLanguage} />
+        <Services arabicLanguage={!arabicLanguage} />
+        <Expertise arabicLanguage={!arabicLanguage} />
       </main>
-      <Footer arabicLanguage={arabicLanguage} />
-      <SidebarMenu showSidebarMenu={showSidebarMenu} setShowSidebarMenu={setShowSidebarMenu} arabicLanguage={arabicLanguage} />
-      <Contact showContact={showContact} setShowContact={setShowContact} arabicLanguage={arabicLanguage} />
+      <Footer arabicLanguage={!arabicLanguage} />
+      <SidebarMenu showSidebarMenu={showSidebarMenu} setShowSidebarMenu={setShowSidebarMenu} arabicLanguage={!arabicLanguage} />
+      <Contact showContact={showContact} setShowContact={setShowContact} arabicLanguage={!arabicLanguage} />
     </>
   );
 }

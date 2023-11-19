@@ -1,10 +1,7 @@
-import { useAppContext } from '@/context/AppContext';
 import Image from 'next/image';
 import { Element } from 'react-scroll';
 
-const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineOneColor, lineTwoColor }) => {
-  const { arabicLanguage } = useAppContext();
-
+const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineOneColor, lineTwoColor, arabicLanguage }) => {
   return (
     <Element className="relative" name={name}>
       <div className="blur-[157px] bg-blurColor bg-opacity-25 w-full lg:w-[850px] rounded-[850px] h-[300px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
@@ -13,14 +10,14 @@ const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineO
           <Image src={imgSrc} alt="Service Image" />
         </div>
         <div data-aos="fade-up" className={`flex flex-col gap-2.5 lg:gap-[30px] max-w-[610px] ${arabicLanguage ? 'items-end' : ''}`}>
-          <h2 className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] ${lineOneColor} ${arabicLanguage ? 'hidden' : 'block'}`}>
+          <h2 className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-4xl ${lineOneColor} ${arabicLanguage ? 'hidden' : 'block'}`}>
             {lineOne} <span className={`${lineTwoColor}`}>{lineTwo}</span>
           </h2>
-          <h2 style={{ direction: 'rtl' }} className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-5xl lg:leading-[56px] text-right ${lineOneColor} ${arabicLanguage ? 'block' : 'hidden'}`}>
+          <h2 style={{ direction: 'rtl' }} className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-4zl text-right ${lineOneColor} ${arabicLanguage ? 'block' : 'hidden'}`}>
             {lineTwo} <span className={`${lineTwoColor}`}>{lineOne}</span>
           </h2>
           <p className={`text-xs lg:text-lg capitalize text-white ${arabicLanguage ? 'text-right' : ''}`}>{para}</p>
-          <button className="text-textColor text-[10px] leading-tight w-[92px] lg:w-[199px] py-2 text-center lg:text-lg font-semibold bg-yellow hover:bg-yellowHover lg:py-[18px] lg:px-[50px] rounded-full cursor-pointer">{arabicLanguage ? ' يتعلم أكثر' : 'Learn More'}</button>
+          <button className="text-textColor text-[10px] leading-tight w-[92px] lg:w-[148px] py-2 text-center lg:text-base font-semibold bg-yellow hover:bg-yellowHover lg:py-1.5 lg:px-6 rounded-full cursor-pointer">{arabicLanguage ? ' يتعلم أكثر' : 'Learn More'}</button>
         </div>
       </div>
     </Element>

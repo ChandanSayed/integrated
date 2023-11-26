@@ -56,7 +56,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <label htmlFor="pNumber" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'رقم التليفون' : 'Phone number'}
                 </label>
-                <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+                <input style={{ border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)', direction: 'ltr' }} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-left' : ''} `} />
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="email" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>

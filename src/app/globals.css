@@ -28,14 +28,46 @@ body {
   display: block;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 54px;
   bottom: 0;
-  padding-bottom: 100vh;
+  padding-bottom: calc(100vh - 54px);
   width: 100%;
   background-repeat: no-repeat;
   background: #112946;
   background: radial-gradient(ellipse closest-side at center, #112946 0, #0b1a2b 36%, #000 100%);
   transition: opacity 0.3s ease-in-out;
+}
+
+.ham span {
+  display: block;
+  /* position: absolute; */
+  height: 2px;
+  width: 22px;
+  background: rgb(255, 255, 255);
+  opacity: 1;
+  margin-top: 4px;
+  transform: rotate(0deg);
+  transition: all 0.25s ease-in-out 0s;
+}
+
+.open span:nth-child(2) {
+  transform: rotate(-45deg);
+  margin-top: -2px;
+}
+.open span:nth-child(1) {
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+.open span:nth-child(3) {
+  display: none;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1024.5px) {
+  .stars-animate.stars-animate-sticky-top:before {
+    top: 32px;
+    padding-bottom: calc(100vh - 32px);
+  }
 }
 
 @keyframes animStar {

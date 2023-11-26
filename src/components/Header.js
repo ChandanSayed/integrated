@@ -6,7 +6,7 @@ import { Button as ScrollLink } from 'react-scroll';
 import Hero from './Hero';
 import Logo from './Logo';
 
-const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLanguage }) => {
+const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLanguage, showSidebarMenu }) => {
   const handleSetActive = to => {
     console.log(to);
   };
@@ -16,23 +16,38 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLa
   }
 
   function openMenu() {
-    setShowSidebarMenu(true);
-    document.body.style.overflow = 'hidden';
+    setShowSidebarMenu(prev => !prev);
+    if (document.body.style.overflow) {
+      document.body.style.overflow = '';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
   }
   function openContact() {
     setShowContact(true);
     document.body.style.overflow = 'hidden';
   }
 
+  function closeMenu() {
+    setShowSidebarMenu(false);
+    document.body.style.overflow = '';
+  }
+
   return (
     <header className="container xl:max-w-[1268px] mx-auto px-4 mt-[104px] relative z-20">
-      <div className="fixed z-20 top-0 left-0 right-0 w-full bg-[#0f101b]">
+      <div className="fixed z-20 top-0 left-0 right-0 w-full bg-[#000000ff]">
         <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center mx-auto px-4 xl:px-5`}>
           <div className="menu w-[73.8px] lg:w-[200.3px]">
-            <Image className={`cursor-pointer max-lg:w-[18px] object-cover w-6 ${arabicLanguage ? 'ml-auto' : ''}`} onClick={openMenu} src={menu} alt="menu" />
+            {/* <Image className={`cursor-pointer max-lg:w-[18px] object-cover w-6 fixed z-30 top-4 lg:top-[19px] ${arabicLanguage ? 'ml-auto right-4' : 'left-4'}`} onClick={openMenu} src={menu} alt="menu" /> */}
+            <div className={`ham cursor-pointer fixed z-30 top-4 ${showSidebarMenu ? 'open lg:top-7' : 'lg:top-[19px]'} ${arabicLanguage ? 'ml-auto right-5' : 'left-5'}`} onClick={openMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div onClick={closeMenu} className={`fixed inset-0 z-20 bg-black bg-opacity-50 ${showSidebarMenu ? '' : 'hidden'} `}></div>
           </div>
           <Logo />
-          <div className="contact-btn w-[73.8px] lg:w-[200.3px]">
+          <div className="contact-btn w-[76px] lg:w-[200.3px]">
             <button onClick={openContact} className={`lg:h-[38.4px] border border-white rounded-full text-center lg:text-base text-white capitalize font-semibold text-[10px] py-1.5 px-2.5 lg:px-[50px] lg:py-1.5 hover:bg-white hover:text-textColor block ${!arabicLanguage ? 'ml-auto' : ''}`}>
               {arabicLanguage ? 'اتصل بنا' : 'Contact Us'}
             </button>

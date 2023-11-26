@@ -63,6 +63,13 @@ body {
   transform: rotate(45deg);
 }
 
+* {
+  outline: transparent;
+}
+:focus {
+  background-color: transparent;
+}
+
 @media (max-width: 1024.5px) {
   .stars-animate.stars-animate-sticky-top:before {
     top: 32px;

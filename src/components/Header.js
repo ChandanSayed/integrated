@@ -12,7 +12,7 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLa
   };
 
   function handleScrollLink(e) {
-    e.target.classList.add('active');
+    // e.target.classList.add('active');
   }
 
   function openMenu() {
@@ -55,77 +55,77 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLa
         </nav>
         <ul data-aos="fade-up" className={`nav-items flex-wrap gap-x-[51px] justify-center text-white max-w-[1268px] mx-auto px-4 pb-2 hidden ${activeScrollMenu ? 'lg:flex' : ''}`}>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="one" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="one" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'التحول الرقمي' : 'Digital Transformation'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="two" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="two" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'رؤية البيانات' : 'Data Insight'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="three" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="three" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'BPA وRPA' : 'BPA & RPA'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="four" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="four" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'عصام' : 'EA'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="five" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="five" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'حوكمة تقنية المعلومات' : 'IT Governance'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="six" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="six" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'تدقيق تكنولوجيا المعلومات' : ' IT Auditing'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="seven" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="seven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'غرفة البحرين لتسوية المنازعات' : 'BCDR'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="eight" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="eight" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'را/م' : 'RA/RM'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="nine" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="nine" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'حلول الأعمال' : 'Cybersecurity'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="ten" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="ten" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'VCIO' : ' Business Solutions'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="eleven" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="eleven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'VCISO' : 'VCIO'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="twelve" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="twelve" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'سحاب' : 'VCISO'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="thirteen" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="thirteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'التكامل والتطوير' : 'Cloud'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="fourteen" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="fourteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'ديف أوبس' : 'Integration & Development'}
             </ScrollLink>
           </li>
           <li className="mt-1">
-            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="fifteen" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
+            <ScrollLink onSetActive={handleSetActive} onClick={handleScrollLink} to="fifteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-sm text-white hover:text-[#787878] cursor-pointer">
               {arabicLanguage ? 'الأمن الإلكتروني' : 'DevOps'}
             </ScrollLink>
           </li>

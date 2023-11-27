@@ -17,7 +17,7 @@ const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineO
             {lineTwo} <span className={`${lineTwoColor}`}>{lineOne}</span>
           </h2>
           <p className={`text-xs lg:text-lg capitalize text-white ${arabicLanguage ? 'text-right' : ''}`}>{para}</p>
-          <button className="text-textColor text-[10px] leading-tight w-[92px] lg:w-[148px] py-2 text-center lg:text-base font-semibold bg-yellow hover:bg-yellowHover lg:py-1.5 lg:px-6 rounded-full cursor-pointer">{arabicLanguage ? ' يتعلم أكثر' : 'Learn More'}</button>
+          <button className="text-textColor text-[10px] leading-tight w-[92px] lg:w-[148px] py-2 text-center lg:text-base font-semibold bg-yellow hover:bg-yellowHover focus:bg-yellowHover lg:py-1.5 lg:px-6 rounded-full cursor-pointer">{arabicLanguage ? ' يتعلم أكثر' : 'Learn More'}</button>
         </div>
       </div>
     </Element>

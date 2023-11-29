@@ -229,11 +229,11 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage, setS
           </svg>
         </div> */}
         <div className={`${arabicLanguage ? 'pr-5 lg:pr-5' : 'pl-5 lg:pl-5'}`}>
-          <h2 className={`font-GilroyBlack font-black text-2xl lg:text-4xl text-white pt-4 mb-7 ${arabicLanguage ? 'text-right' : ''} `}>IIT</h2>
+          <h2 className={`font-Gilroy text-2xl lg:text-4xl text-white pt-4 mb-7 ${arabicLanguage ? 'text-right' : ''} `}>IIT</h2>
           <div className={`grid grid-cols-3 gap-6 pb-16 lg:pb-20 ${arabicLanguage ? 'pl-11 lg:pl-[50px]' : 'pr-11 lg:pr-[50px]'} `} style={{ alignItems: 'self-start' }}>
             {services.map((service, i) => {
               return (
-                <Button key={i} className="text-center" spy={true} smooth={true} offset={-300} duration={1000} delay={1000} to={service.target}>
+                <Button key={i} className="text-center focus:bg-transparent" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} to={service.target}>
                   <div className="h-[56px] w-[59px] lg:w-[71px] lg:h-[67px] rounded-md mx-auto bg-white bg-opacity-5 hover:bg-opacity-20 border border-white border-opacity-20 flex items-center justify-center">
                     <Image src={service.img} alt="Service Icon" />
                   </div>

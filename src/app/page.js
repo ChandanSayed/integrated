@@ -6,7 +6,7 @@ import Services from '@/components/Services';
 import StarBg from '@/components/StarBg';
 
 import Aos from 'aos';
-// import 'aos/dist/aos.css';
+import 'aos/dist/aos.css';
 import Expertise from '@/components/Expertise';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';

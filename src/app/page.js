@@ -50,7 +50,7 @@ export default function Home() {
         <Services arabicLanguage={arabicLanguage} />
         <Expertise arabicLanguage={arabicLanguage} />
       </main>
-      <Footer arabicLanguage={arabicLanguage} />
+      <Footer arabicLanguage={arabicLanguage} setShowContact={setShowContact} />
       <SidebarMenu setShowContact={setShowContact} showSidebarMenu={showSidebarMenu} setShowSidebarMenu={setShowSidebarMenu} arabicLanguage={arabicLanguage} />
       <Contact showContact={showContact} setShowContact={setShowContact} arabicLanguage={arabicLanguage} />
     </>

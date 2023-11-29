@@ -8,7 +8,7 @@ import x from '/public/images/x.svg';
 import li from '/public/images/in.svg';
 import fb from '/public/images/fb.svg';
 
-const Footer = ({ arabicLanguage }) => {
+const Footer = ({ arabicLanguage, setShowContact }) => {
   const links = [
     {
       name: 'Customers',
@@ -54,6 +54,12 @@ const Footer = ({ arabicLanguage }) => {
     }
   ];
 
+  function openContact(e) {
+    e.preventDefault();
+    setShowContact(true);
+    document.body.style.overflow = 'hidden';
+  }
+
   return (
     <footer className="py-10 relative z-10 mt-32 bg-[#0f101b]">
       <div className="flex flex-col gap-[30px] items-center justify-center mb-[60px] relative z-10">
@@ -62,7 +68,7 @@ const Footer = ({ arabicLanguage }) => {
           {links.map((link, i) => {
             return (
               <li key={i}>
-                <a className="text-white text-xs" href={arabicLanguage ? link.arabicLocation : link.location}>
+                <a onClick={openContact} className="text-white text-xs" href={arabicLanguage ? link.arabicLocation : link.location}>
                   {arabicLanguage ? link.arabicName : link.name}
                 </a>
               </li>

@@ -222,7 +222,7 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage, setS
 
   return (
     <>
-      <div className={`w-full max-lg:max-w-[400px] lg:w-[380px] fixed z-30 top-8 lg:top-[54px] transition-all duration-500 bottom-0 overflow-y-scroll custom-scrollbar ${arabicLanguage ? 'lg:rounded-ss-3xl lg:rounded-es-3xl' : 'lg:rounded-se-3xl lg:rounded-ee-3xl'} border-opacity-30 bg-white bg-opacity-5 backdrop-blur-[10px] ${showSidebarMenu ? `${arabicLanguage ? 'right-0 lg:-right-2' : 'left-0 lg:-left-2'}` : `${arabicLanguage ? '-right-[400px] lg:-right-[502px]' : '-left-[400px] lg:-left-[502px]'}`} `}>
+      <div className={`w-full max-lg:max-w-[400px] lg:w-[380px] fixed z-50 top-8 lg:top-[54px] transition-all duration-500 bottom-0 overflow-y-scroll custom-scrollbar ${arabicLanguage ? 'lg:rounded-ss-3xl lg:rounded-es-3xl' : 'lg:rounded-se-3xl lg:rounded-ee-3xl'} border-opacity-30 bg-white bg-opacity-5 backdrop-blur-[10px] ${showSidebarMenu ? `${arabicLanguage ? 'right-0 lg:-right-2' : 'left-0 lg:-left-2'}` : `${arabicLanguage ? '-right-[400px] lg:-right-[502px]' : '-left-[400px] lg:-left-[502px]'}`} `}>
         {/* <div className="sticky right-7 top-0 pr-4 w-full pb-4 pt-[19px] bg-white bg-opacity-5 backdrop-blur-[10px]">
           <svg onClick={closeMenu} className={`cursor-pointer ${arabicLanguage ? 'ml-auto' : 'ml-6'}`} xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
             <path d="M15.4517 17.5117C15.7343 17.8146 16.2089 17.8309 16.5117 17.5483C16.8146 17.2657 16.8309 16.7911 16.5483 16.4883L10.0259 9.5L16.5483 2.51174C16.8309 2.20893 16.8146 1.73433 16.5117 1.45171C16.2089 1.16908 15.7343 1.18545 15.4517 1.48826L9 8.40081L2.54829 1.48826C2.26567 1.18545 1.79107 1.16908 1.48826 1.45171C1.18545 1.73433 1.16908 2.20893 1.45171 2.51174L7.97409 9.5L1.45171 16.4883C1.16908 16.7911 1.18545 17.2657 1.48826 17.5483C1.79107 17.8309 2.26567 17.8146 2.54829 17.5117L9 10.5992L15.4517 17.5117Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -233,7 +233,7 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage, setS
           <div className={`grid grid-cols-3 gap-6 pb-16 lg:pb-20 ${arabicLanguage ? 'pl-11 lg:pl-[50px]' : 'pr-11 lg:pr-[50px]'} `} style={{ alignItems: 'self-start' }}>
             {services.map((service, i) => {
               return (
-                <Button key={i} className="text-center focus:bg-transparent" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} to={service.target}>
+                <Button key={i} className="text-center focus:bg-transparent active:bg-transparent hover:bg-transparent" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} to={service.target}>
                   <div className="h-[56px] w-[59px] lg:w-[71px] lg:h-[67px] rounded-md mx-auto bg-white bg-opacity-5 hover:bg-opacity-20 border border-white border-opacity-20 flex items-center justify-center">
                     <Image src={service.img} alt="Service Icon" />
                   </div>
@@ -244,7 +244,7 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage, setS
           </div>
           <ul className={`flex flex-col ${arabicLanguage ? 'text-right pl-11 lg:pl-12' : 'pr-11 lg:pr-12'} items-start gap-1`}>
             <li className={`bg-transparent border-b border-white border-opacity-10 flex-1 w-full cursor-pointer`}>
-              <button onClick={handleDrop} className={`flex-1 w-full flex items-center justify-between ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+              <button onClick={handleDrop} className={`flex-1 w-full flex items-center justify-between hover:bg-transparent focus:bg-transparent active:bg-transparent ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
                 <small className="text-white capitalize font-Gilroy text-xs leading-[41px] lg:leading-[50px] lg:text-base"> {arabicLanguage ? 'اتصل بنا' : 'Segments'} </small>{' '}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
                   <path d="M8 9L15.7942 0H0.205771L8 9Z" fill="white" />

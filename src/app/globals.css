@@ -64,7 +64,7 @@ body {
 }
 
 * {
-  outline: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 :focus {
   background-color: transparent;

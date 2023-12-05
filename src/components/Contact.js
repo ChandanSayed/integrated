@@ -28,13 +28,13 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <label htmlFor="fName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'الاسم الأول' : 'First name'}
                 </label>
-                <input style={inputStyle} type="text" id="fName" name="fName" placeholder={`${arabicLanguage ? 'الاسم الأول' : 'First name'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+                <input style={inputStyle} type="text" id="fName" name="fName" placeholder={`${arabicLanguage ? 'الاسم الأول' : 'First name'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="lName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'اسم العائلة' : 'Last Name'}
                 </label>
-                <input style={inputStyle} type="text" id="lName" name="lName" placeholder={`${arabicLanguage ? 'اسم العائلة' : 'Last Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+                <input style={inputStyle} type="text" id="lName" name="lName" placeholder={`${arabicLanguage ? 'اسم العائلة' : 'Last Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
             </div>
             <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
@@ -42,13 +42,13 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <label htmlFor="cName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'اسم الشركة' : 'Company Name'}
                 </label>
-                <input style={inputStyle} type="text" id="cName" name="cName" placeholder={`${arabicLanguage ? 'اسم الشركة' : 'Company Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+                <input style={inputStyle} type="text" id="cName" name="cName" placeholder={`${arabicLanguage ? 'اسم الشركة' : 'Company Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="jTitle" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}
                 </label>
-                <input style={inputStyle} type="text" id="jTitle" name="jTitle" placeholder={`${arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+                <input style={inputStyle} type="text" id="jTitle" name="jTitle" placeholder={`${arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
             </div>
             <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
@@ -56,13 +56,13 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <label htmlFor="pNumber" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'رقم التليفون' : 'Phone number'}
                 </label>
-                <input style={{ border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)', direction: 'ltr' }} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-left' : ''} `} />
+                <input style={{ border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)', direction: 'ltr' }} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-left' : ''} `} />
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="email" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'بريد إلكتروني' : 'Email'}
                 </label>
-                <input style={inputStyle} type="text" id="email" name="email" placeholder={`${arabicLanguage ? 'you@company.com' : 'you@company.com'}`} className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+                <input style={inputStyle} type="text" id="email" name="email" placeholder={`${arabicLanguage ? 'you@company.com' : 'you@company.com'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-[30px]">
@@ -70,8 +70,8 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <label htmlFor="Country" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'دولة' : 'Country'}
                 </label>
-                {/* <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `} /> */}
-                <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}>
+                {/* <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `} /> */}
+                <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}>
                   <option value="Country">{arabicLanguage ? 'دولة' : 'Country'}</option>
                 </select>
               </div>
@@ -81,10 +81,10 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <label htmlFor="message" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'رسالة' : 'Message'}
                 </label>
-                {/* <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `}>
+                {/* <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `}>
                 <option value="Country">Country</option>
               </select> */}
-                <textarea name="message" id="message" cols="30" rows="5" className={`p-[12px_10px_12px_16px] text-base text-white bg-white bg-opacity-5 rounded-[8px] text-opacity-10 outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}></textarea>
+                <textarea name="message" id="message" cols="30" rows="5" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}></textarea>
               </div>
             </div>
             <div className={`flex items-start ${arabicLanguage ? 'flex-row-reverse' : ''}`}>

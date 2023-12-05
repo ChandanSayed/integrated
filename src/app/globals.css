@@ -70,6 +70,11 @@ body {
   background-color: transparent;
 }
 
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-background-clip: text !important;
+}
+
 @media (max-width: 1024.5px) {
   .stars-animate.stars-animate-sticky-top:before {
     top: 32px;

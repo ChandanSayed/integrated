@@ -71,9 +71,8 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                   {arabicLanguage ? 'دولة' : 'Country'}
                 </label>
                 {/* <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `} /> */}
-                <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}>
-                  <option value="Country">{arabicLanguage ? 'دولة' : 'Country'}</option>
-                </select>
+                <input type="text" style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
+                {/* <option value="Country">{arabicLanguage ? 'دولة' : 'Country'}</option> */}
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-[30px]">
@@ -84,11 +83,29 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 {/* <select style={inputStyle} name="Country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `}>
                 <option value="Country">Country</option>
               </select> */}
-                <textarea name="message" id="message" cols="30" rows="5" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}></textarea>
+                <textarea style={inputStyle} name="message" id="message" cols="30" rows="5" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}></textarea>
               </div>
             </div>
             <div className={`flex items-start ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
-              <input type="checkbox" className={`${arabicLanguage ? 'mt-1 ml-3' : 'mt-1 mr-3'}`} /> <p className={`text-xs lg:text-sm text-white ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'من خلال إكمال هذا النموذج، فإنك توافق على قيام IIT بتخزين معلوماتك حتى تتمكن من تلقي المعلومات المتعلقة بخدماتنا. اقرأ المزيد حول كيفية إدارتنا لبياناتك الشخصية' : 'By completing this form you agree to IIT storing your information so that you can receive information related to our services. Read more about how we manage your personal data'}</p>
+              <input type="checkbox" className={`${arabicLanguage ? 'mt-1 ml-3' : 'mt-1 mr-3'}`} />{' '}
+              <p className={`text-xs lg:text-sm text-white ${arabicLanguage ? 'text-right' : 'text-left'}`}>
+                {arabicLanguage ? (
+                  <span>
+                    {' '}
+                    <a href="/ar" rel="noopener noreferrer">
+                      من خلال إكمال هذا النموذج، فإنك توافق على قيام{' '}
+                    </a>{' '}
+                    IIT بتخزين معلوماتك حتى تتمكن من تلقي المعلومات المتعلقة بخدماتنا. اقرأ المزيد حول كيفية إدارتنا لبياناتك الشخصية{' '}
+                  </span>
+                ) : (
+                  <span>
+                    By completing this form you agree to IIT storing your information so that you can receive information related to our services.{' '}
+                    <a href="/" rel="noopener noreferrer">
+                      Read more about how we manage your personal data
+                    </a>
+                  </span>
+                )}
+              </p>
             </div>
             <div className="flex-1">
               <button className="text-textColor bg-yellow hover:bg-yellowHover text-[10px] text-center py-2 lg:py-3 lg:text-lg w-full rounded-full">{arabicLanguage ? 'يُقدِّم' : 'Submit'}</button>

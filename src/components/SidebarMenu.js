@@ -270,10 +270,10 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage, setS
             ))}
           </ul>
           <div className={`language mt-20 flex gap-4 mb-3 ${arabicLanguage ? 'justify-end' : ''} `}>
-            <a href="/ar" onClick={handleArabic} className="w-12 h-12 rounded-full border cursor-pointer border-white flex justify-center items-center text-white text-lg leading-none lg:text-[22px]">
+            <a href="/ar" onClick={handleArabic} className={`w-12 h-12 rounded-full border cursor-pointer ${!arabicLanguage ? 'border-white text-white' : 'border-yellow text-yellow'} flex justify-center items-center text-lg leading-none lg:text-[22px]`}>
               AR
             </a>
-            <a href="/" onClick={handleEnglish} className="w-12 h-12 rounded-full border cursor-pointer border-yellow flex justify-center items-center text-yellow text-lg leading-none lg:text-[22px]">
+            <a href="/" onClick={handleEnglish} className={`w-12 h-12 rounded-full border cursor-pointer ${arabicLanguage ? 'border-white text-white' : 'border-yellow text-yellow'} flex justify-center items-center text-lg leading-none lg:text-[22px]`}>
               EN
             </a>
           </div>

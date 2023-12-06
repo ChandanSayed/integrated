@@ -95,7 +95,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
           </ul>
         </div>
         <div className="bg-black blur-[92px] absolute inset-0"></div>
-        <div className="footer-bottom container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30">
+        <div className="footer-bottom relative container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30">
           <div className="flex flex-col items-center lg:flex-row gap-8 justify-between">
             {arabicLanguage ? (
               <p style={{ direction: 'rtl' }} className={`text-[10px] lg:text-xs text-white text-center ${poppins.className}`}>

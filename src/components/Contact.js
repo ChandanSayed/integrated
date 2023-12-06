@@ -11,7 +11,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
   return (
     <>
       <div className={`fixed inset-0 z-20 bg-black bg-opacity-50 ${showContact ? '' : 'hidden'} `}></div>
-      <div className={`max-w-[823px] w-full lg:rounded-lg mx-auto text-center fixed z-20 left-1/2 transform -translate-x-1/2 top-0 bottom-0 py-20 backdrop-blur-[10px] px-4 lg:px-16 overflow-y-scroll custom-scrollbar ${showContact ? '' : 'hidden'}`}>
+      <div className={`max-w-[823px] w-full lg:rounded-lg mx-auto text-center fixed z-50 left-1/2 transform -translate-x-1/2 top-0 bottom-0 py-20 backdrop-blur-[10px] px-4 lg:px-16 overflow-y-scroll custom-scrollbar ${showContact ? '' : 'hidden'}`}>
         <div className="sticky right-0 top-0 lg:top-12 pr-0 w-full">
           <svg onClick={closeContact} className="cursor-pointer ml-auto" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
             <path d="M15.4517 17.5117C15.7343 17.8146 16.2089 17.8309 16.5117 17.5483C16.8146 17.2657 16.8309 16.7911 16.5483 16.4883L10.0259 9.5L16.5483 2.51174C16.8309 2.20893 16.8146 1.73433 16.5117 1.45171C16.2089 1.16908 15.7343 1.18545 15.4517 1.48826L9 8.40081L2.54829 1.48826C2.26567 1.18545 1.79107 1.16908 1.48826 1.45171C1.18545 1.73433 1.16908 2.20893 1.45171 2.51174L7.97409 9.5L1.45171 16.4883C1.16908 16.7911 1.18545 17.2657 1.48826 17.5483C1.79107 17.8309 2.26567 17.8146 2.54829 17.5117L9 10.5992L15.4517 17.5117Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

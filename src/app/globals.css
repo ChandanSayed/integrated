@@ -30,12 +30,18 @@ body {
   position: sticky;
   top: 54px;
   bottom: 0;
-  padding-bottom: calc(100vh - 54px);
+  padding-top: calc(100vh - 54px);
   width: 100%;
   background-repeat: no-repeat;
   background: #112946;
   background: radial-gradient(ellipse closest-side at center, #112946 0, #0b1a2b 36%, #000 100%);
   transition: opacity 0.3s ease-in-out;
+}
+
+@-moz-document url-prefix() {
+  .stars-animate.stars-animate-sticky-top:before {
+    padding-top: 100vh;
+  }
 }
 
 .ham span {
@@ -78,7 +84,7 @@ input:-webkit-autofill {
 @media (max-width: 1024.5px) {
   .stars-animate.stars-animate-sticky-top:before {
     top: 32px;
-    padding-bottom: calc(100vh - 32px);
+    padding-top: calc(100vh - 32px);
   }
 }
 

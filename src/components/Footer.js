@@ -126,97 +126,97 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
   return (
     <>
       <footer className="py-10 relative z-10 bg-[#0f101b]">
-        <div className="flex flex-col lg:flex-row max-lg:gap-[30px] gap-4 container xl:max-w-[1500px] px-4 mx-auto mb-[60px] relative z-10">
+        <div className={`flex flex-col ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} max-lg:gap-[30px] gap-4 container xl:max-w-[1500px] px-4 mx-auto mb-[60px] relative z-10`}>
           <div className="w-full lg:w-1/4">
-            <Logo />
+            <Logo arabicLanguage={arabicLanguage} />
           </div>
           <div className="w-full lg:w-1/4">
-            <h4 className="text-base lg:text-lg text-white uppercase mb-2 text-left">{arabicLanguage ? 'حلول' : 'Solutions'}</h4>
-            <ul className={`nav-items flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5'}`}>
+            <h4 className={`text-base lg:text-lg text-white uppercase mb-2 ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'حلول' : 'Solutions'}</h4>
+            <ul className={`nav-items flex flex-col max-lg:pl-4 ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} flex-wrap max-lg:gap-5`}>
               <li className="lg:w-1/2">
-                <ScrollLink to="one" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="one" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'التحول الرقمي' : 'Digital Transformation'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="two" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="two" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'رؤية البيانات' : 'Data Insight'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="three" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="three" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'BPA وRPA' : 'BPA & RPA'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="four" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="four" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'عصام' : 'EA'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="five" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="five" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'حوكمة تقنية المعلومات' : 'IT Governance'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="six" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="six" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'تدقيق تكنولوجيا المعلومات' : ' IT Auditing'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="seven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="seven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'غرفة البحرين لتسوية المنازعات' : 'BCDR'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="eight" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="eight" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'را/م' : 'RA/RM'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="nine" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="nine" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'حلول الأعمال' : 'Cybersecurity'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="ten" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="ten" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'VCIO' : ' Business Solutions'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="eleven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="eleven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'VCISO' : 'VCIO'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="twelve" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="twelve" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'سحاب' : 'VCISO'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="thirteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="thirteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'التكامل والتطوير' : 'Cloud'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="fourteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="fourteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'ديف أوبس' : 'Integration & Development'}
                 </ScrollLink>
               </li>
               <li className="lg:w-1/2">
-                <ScrollLink to="fifteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer">
+                <ScrollLink to="fifteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'الأمن الإلكتروني' : 'DevOps'}
                 </ScrollLink>
               </li>
             </ul>
           </div>
           <div className="w-full lg:w-1/4">
-            <h4 className="text-base lg:text-lg text-white uppercase mb-2 text-left">{arabicLanguage ? 'اتصل بنا' : 'Segments'}</h4>
-            <ul className="flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5">
+            <h4 className={`text-base lg:text-lg text-white uppercase mb-2 ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'اتصل بنا' : 'Segments'}</h4>
+            <ul className={`flex flex-col max-lg:pl-4 ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} flex-wrap max-lg:gap-5`}>
               {expertise.map((link, i) => {
                 return (
-                  <li className="lg:w-1/2" key={i}>
-                    <a className="text-[#686e78] text-xs" href={arabicLanguage ? link.arabicLocation : link.location}>
+                  <li className={`lg:w-1/2 ${arabicLanguage ? 'text-right' : ''}`} key={i}>
+                    <a className={`text-[#686e78] text-xs ${arabicLanguage ? 'text-right' : ''}`} href={arabicLanguage ? link.arabicLocation : link.location}>
                       {arabicLanguage ? link.arabicName : link.name}
                     </a>
                   </li>
@@ -225,12 +225,12 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
             </ul>
           </div>
           <div className="w-full lg:w-1/4">
-            <h4 className="text-base lg:text-lg text-white uppercase mb-2 text-left">IIT</h4>
-            <ul className="flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5">
+            <h4 className={`text-base lg:text-lg text-white uppercase mb-2 ${arabicLanguage ? 'text-right' : 'text-left'}`}>IIT</h4>
+            <ul className={`flex flex-col max-lg:pl-4 ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} flex-wrap max-lg:gap-5`}>
               {links.map((link, i) => {
                 return (
-                  <li className="lg:w-1/2" key={i}>
-                    <a onClick={openContact} className="text-[#686e78] text-xs" href={arabicLanguage ? link.arabicLocation : link.location}>
+                  <li className={`lg:w-1/2 ${arabicLanguage ? 'text-right' : ''}`} key={i}>
+                    <a onClick={openContact} className={`text-[#686e78] text-xs ${arabicLanguage ? 'text-right' : ''}`} href={arabicLanguage ? link.arabicLocation : link.location}>
                       {arabicLanguage ? link.arabicName : link.name}
                     </a>
                   </li>
@@ -241,7 +241,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
         </div>
         <div className="bg-black absolute inset-0"></div>
         <div className="footer-bottom relative container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30">
-          <div className="flex flex-col items-center lg:flex-row gap-8 justify-between">
+          <div className={`flex flex-col items-center gap-8 justify-between ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
             <p className="flex gap-4">
               <a href="/" className={`text-[10px] lg:text-xs ${!arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
                 English
@@ -251,7 +251,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
               </a>
             </p>
             {arabicLanguage ? (
-              <div className="flex gap-6 items-center">
+              <div className={`flex gap-6 items-center max-xl:ml-20 max-lg:ml-0 flex-row-reverse`}>
                 <a href="/" className="text-white text-[10px] lg:text-xs">
                   سياسة الخصوصية
                 </a>
@@ -260,7 +260,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
                 </p>
               </div>
             ) : (
-              <div className="flex gap-6 items-center max-sm:flex-col">
+              <div className={`flex gap-6 items-center max-sm:flex-col  max-xl:mr-20 max-lg:mr-0`}>
                 <a href="/" className="text-white text-[10px] lg:text-xs">
                   Privacy Policy
                 </a>

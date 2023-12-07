@@ -31,7 +31,7 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLa
   }
 
   return (
-    <header className="container xl:max-w-[1268px] mx-auto px-4 mt-[104px] relative z-20">
+    <header className="container xl:max-w-[1268px] mx-auto px-4 mt-[54px] relative z-20">
       <div className="fixed z-20 top-0 left-0 right-0 w-full bg-[#000000ff]">
         <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center mx-auto px-4 xl:px-5`}>
           <div className="menu w-[73.8px] lg:w-[200.3px]">

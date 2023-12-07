@@ -20,7 +20,7 @@ const StarBg = () => {
   };
 
   return (
-    <div className="stars-animate stars-animate-sticky-top fixed inset-0 z-0">
+    <div className="stars-animate stars-animate-sticky-top sticky inset-0 z-0">
       <div style={star}></div>
       <div style={star2}></div>
     </div>

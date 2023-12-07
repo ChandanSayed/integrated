@@ -81,13 +81,6 @@ input:-webkit-autofill {
   -webkit-background-clip: text !important;
 }
 
-@media (max-width: 1024.5px) {
-  .stars-animate.stars-animate-sticky-top:before {
-    top: 32px;
-    padding-top: calc(100vh - 32px);
-  }
-}
-
 @keyframes animStar {
   0% {
     -webkit-transform: translateY(0);

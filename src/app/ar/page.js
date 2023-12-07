@@ -47,7 +47,7 @@ export default function Home() {
       <div className="wrapper">
         <Header showSidebarMenu={showSidebarMenu} activeScrollMenu={activeScrollMenu} setShowSidebarMenu={setShowSidebarMenu} setShowContact={setShowContact} arabicLanguage={!arabicLanguage} />
         <StarBg />
-        <main className="relative z-10">
+        <main className="relative z-10 -mt-[100vh]">
           <Services arabicLanguage={!arabicLanguage} />
           <Expertise arabicLanguage={!arabicLanguage} />
         </main>

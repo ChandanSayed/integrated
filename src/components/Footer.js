@@ -63,7 +63,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
   return (
     <>
       <footer className="py-10 relative z-10 mt-32 bg-[#0f101b]">
-        <div className="flex flex-col gap-[30px] items-center justify-center mb-[60px] relative z-10">
+        <div className="flex flex-col gap-[30px]container xl:max-w-[1328px] px-4 mx-auto items-center justify-center mb-[60px] relative z-10">
           <Logo />
           <ul className="flex flex-col items-center lg:flex-row gap-5">
             {links.map((link, i) => {
@@ -97,15 +97,33 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
         <div className="bg-black blur-[92px] absolute inset-0"></div>
         <div className="footer-bottom relative container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30">
           <div className="flex flex-col items-center lg:flex-row gap-8 justify-between">
+            <p className="flex gap-4">
+              <a href="/" className={`${!arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
+                English
+              </a>
+              <a href="/ar" className={`${arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
+                عربي
+              </a>
+            </p>
             {arabicLanguage ? (
-              <p style={{ direction: 'rtl' }} className={`text-[10px] lg:text-xs text-white text-center ${poppins.className}`}>
-                © حقوق الطبع والنشر {new Date().getFullYear()}، جميع الحقوق محفوظة لشركة IIT
-              </p>
+              <div className="flex gap-6 items-center">
+                <a href="/" className="text-white">
+                  سياسة الخصوصية
+                </a>
+                <p style={{ direction: 'rtl' }} className={`text-[10px] lg:text-xs text-white text-center ${poppins.className}`}>
+                  © حقوق الطبع والنشر {new Date().getFullYear()}، جميع الحقوق محفوظة لشركة IIT
+                </p>
+              </div>
             ) : (
-              <p className={`text-[10px] lg:text-xs text-white text-center ${poppins.className}`}> © Copyright {new Date().getFullYear()}, All Rights Reserved by IIT </p>
+              <div className="flex gap-6 items-center">
+                <a href="/" className="text-white">
+                  Privacy Policy
+                </a>
+                <p className={`text-[10px] lg:text-xs text-white text-center ${poppins.className}`}> © Copyright {new Date().getFullYear()}, All Rights Reserved by IIT </p>
+              </div>
             )}
 
-            <p className="text-[10px] lg:text-sm text-white">Integrated@gmail.com</p>
+            {/* <p className="text-[10px] lg:text-sm text-white">Integrated@gmail.com</p> */}
           </div>
         </div>
         {/* <div className=" w-full mx-auto max-w-[1298px] max-lg:hidden h-0"> */}

@@ -1,6 +1,3 @@
-import Image from 'next/image';
-
-import menu from '/public/images/menu.svg';
 import { Button as ScrollLink } from 'react-scroll';
 
 import Hero from './Hero';
@@ -40,7 +37,6 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLa
           <div className="menu w-[73.8px] lg:w-[200.3px]">
             {/* <Image className={`cursor-pointer max-lg:w-[18px] object-cover w-6 fixed z-30 top-4 lg:top-[19px] ${arabicLanguage ? 'ml-auto right-4' : 'left-4'}`} onClick={openMenu} src={menu} alt="menu" /> */}
             <div className={`ham cursor-pointer fixed z-30 ${showSidebarMenu ? 'open top-4 lg:top-7' : 'lg:top-[19px] top-1.5'} ${arabicLanguage ? 'ml-auto right-5' : 'left-5'}`} onClick={openMenu}>
-              <span></span>
               <span></span>
               <span></span>
             </div>

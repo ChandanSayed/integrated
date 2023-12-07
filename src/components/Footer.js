@@ -7,6 +7,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' });
 import x from '/public/images/x.svg';
 import li from '/public/images/in.svg';
 import fb from '/public/images/fb.svg';
+import { Button as ScrollLink } from 'react-scroll';
 
 const Footer = ({ arabicLanguage, setShowContact }) => {
   const links = [
@@ -53,6 +54,68 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
       arabicLocation: '/ar'
     }
   ];
+  const expertise = [
+    {
+      name: 'Healthcare and data science',
+      arabicName: 'الرعاية الصحية وعلوم البيانات',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Finance And Accounting',
+      arabicName: 'المالية والمحاسبة',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Education and learning',
+      arabicName: 'التعليم والتعلم',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Manufacturing and Energy',
+      arabicName: 'التصنيع والطاقة',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Retail and Logistics',
+      arabicName: 'البيع بالتجزئة والخدمات اللوجستية',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Lifestyle, travel and Hospitality',
+      arabicName: 'نمط الحياة والسفر والضيافة',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Nonprofit',
+      arabicName: 'غير ربحية',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Public Sector',
+      arabicName: 'القطاع العام',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'Communication & Media      ',
+      arabicName: 'الاتصال والإعلام',
+      location: '/',
+      arabicLocation: '/ar'
+    },
+    {
+      name: 'High Tech',
+      arabicName: 'التكنولوجيا العالية',
+      location: '/',
+      arabicLocation: '/ar'
+    }
+  ];
 
   function openContact(e) {
     e.preventDefault();
@@ -63,51 +126,133 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
   return (
     <>
       <footer className="py-10 relative z-10 mt-32 bg-[#0f101b]">
-        <div className="flex flex-col gap-[30px]container xl:max-w-[1328px] px-4 mx-auto items-center justify-center mb-[60px] relative z-10">
-          <Logo />
-          <ul className="flex flex-col items-center lg:flex-row gap-5">
-            {links.map((link, i) => {
-              return (
-                <li key={i}>
-                  <a onClick={openContact} className="text-white text-xs" href={arabicLanguage ? link.arabicLocation : link.location}>
-                    {arabicLanguage ? link.arabicName : link.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-          <ul className="flex justify-center gap-2">
-            <li>
-              <a href="https://www.linkedin.com/">
-                <Image src={li} alt="LinkedIn" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/">
-                <Image src={fb} alt="Facebook" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.twitter.com/">
-                <Image src={x} alt="Twitter" />
-              </a>
-            </li>
-          </ul>
+        <div className="flex flex-col lg:flex-row max-lg:gap-[30px] gap-4 container xl:max-w-[1500px] px-4 mx-auto mb-[60px] relative z-10">
+          <div className="w-full lg:w-1/4">
+            <Logo />
+          </div>
+          <div className="w-full lg:w-1/4">
+            <h4 className="text-base lg:text-lg text-white uppercase mb-2 text-left">{arabicLanguage ? 'حلول' : 'Solutions'}</h4>
+            <ul className={`nav-items flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5'}`}>
+              <li className="lg:w-1/2">
+                <ScrollLink to="one" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'التحول الرقمي' : 'Digital Transformation'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="two" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'رؤية البيانات' : 'Data Insight'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="three" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'BPA وRPA' : 'BPA & RPA'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="four" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'عصام' : 'EA'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="five" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'حوكمة تقنية المعلومات' : 'IT Governance'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="six" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'تدقيق تكنولوجيا المعلومات' : ' IT Auditing'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="seven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'غرفة البحرين لتسوية المنازعات' : 'BCDR'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="eight" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'را/م' : 'RA/RM'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="nine" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'حلول الأعمال' : 'Cybersecurity'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="ten" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'VCIO' : ' Business Solutions'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="eleven" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'VCISO' : 'VCIO'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="twelve" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'سحاب' : 'VCISO'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="thirteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'التكامل والتطوير' : 'Cloud'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="fourteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'ديف أوبس' : 'Integration & Development'}
+                </ScrollLink>
+              </li>
+              <li className="lg:w-1/2">
+                <ScrollLink to="fifteen" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className="font-Gilroy text-xs text-white hover:text-[#787878] cursor-pointer">
+                  {arabicLanguage ? 'الأمن الإلكتروني' : 'DevOps'}
+                </ScrollLink>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full lg:w-1/4">
+            <h4 className="text-base lg:text-lg text-white uppercase mb-2 text-left">{arabicLanguage ? 'اتصل بنا' : 'Segments'}</h4>
+            <ul className="flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5">
+              {expertise.map((link, i) => {
+                return (
+                  <li className="lg:w-1/2" key={i}>
+                    <a className="text-white text-xs" href={arabicLanguage ? link.arabicLocation : link.location}>
+                      {arabicLanguage ? link.arabicName : link.name}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="w-full lg:w-1/4">
+            <h4 className="text-base lg:text-lg text-white uppercase mb-2 text-left">IIT</h4>
+            <ul className="flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5">
+              {links.map((link, i) => {
+                return (
+                  <li className="lg:w-1/2" key={i}>
+                    <a onClick={openContact} className="text-white text-xs" href={arabicLanguage ? link.arabicLocation : link.location}>
+                      {arabicLanguage ? link.arabicName : link.name}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
         <div className="bg-black blur-[92px] absolute inset-0"></div>
         <div className="footer-bottom relative container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30">
           <div className="flex flex-col items-center lg:flex-row gap-8 justify-between">
             <p className="flex gap-4">
-              <a href="/" className={`${!arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
+              <a href="/" className={`text-[10px] lg:text-xs ${!arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
                 English
               </a>
-              <a href="/ar" className={`${arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
+              <a href="/ar" className={`text-[10px] lg:text-xs ${arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
                 عربي
               </a>
             </p>
             {arabicLanguage ? (
               <div className="flex gap-6 items-center">
-                <a href="/" className="text-white">
+                <a href="/" className="text-white text-[10px] lg:text-xs">
                   سياسة الخصوصية
                 </a>
                 <p style={{ direction: 'rtl' }} className={`text-[10px] lg:text-xs text-white text-center ${poppins.className}`}>
@@ -115,8 +260,8 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
                 </p>
               </div>
             ) : (
-              <div className="flex gap-6 items-center">
-                <a href="/" className="text-white">
+              <div className="flex gap-6 items-center max-sm:flex-col">
+                <a href="/" className="text-white text-[10px] lg:text-xs">
                   Privacy Policy
                 </a>
                 <p className={`text-[10px] lg:text-xs text-white text-center ${poppins.className}`}> © Copyright {new Date().getFullYear()}, All Rights Reserved by IIT </p>

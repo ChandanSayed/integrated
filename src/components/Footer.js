@@ -240,7 +240,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
           </div>
         </div>
         <div className="bg-black absolute inset-0"></div>
-        <div className="footer-bottom relative container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30">
+        <div className="footer-bottom relative container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30 mb-12">
           <div className={`flex flex-col items-center gap-8 justify-between ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
             <p className="flex gap-4">
               <a href="/" className={`text-[10px] lg:text-xs ${!arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>

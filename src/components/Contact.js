@@ -45,7 +45,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
         <p className="text-xs lg:text-lg text-white mx-auto text-center pb-[30px] lg:pb-[60px]">{arabicLanguage ? 'نحن نحب أن نسمع منك. يرجى ملء هذا النموذج.' : 'We’d love to hear from you. Please fill out this form.'} </p>
         <form ref={form} onSubmit={sendEmail} action="#" className={`form flex flex-col gap-[30px] ${arabicLanguage ? 'text-right' : ''}`}>
           <div className="flex flex-col gap-[30px] lg:gap-6">
-            <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col -[30px] ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row gap'}`}>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="fName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'الاسم الأول' : 'First name'}
@@ -59,7 +59,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <input style={inputStyle} type="text" id="lName" name="lName" placeholder={`${arabicLanguage ? 'اسم العائلة' : 'Last Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
             </div>
-            <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col  gap-[30px] ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="cName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'اسم الشركة' : 'Company Name'}
@@ -73,7 +73,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <input style={inputStyle} type="text" id="jTitle" name="jTitle" placeholder={`${arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
               </div>
             </div>
-            <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col  gap-[30px] ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="pNumber" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'رقم التليفون' : 'Phone number'}
@@ -108,7 +108,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <textarea style={inputStyle} name="message" id="message" cols="30" rows="5" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}></textarea>
               </div>
             </div>
-            <div className={`flex items-start ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex items-start ${arabicLanguage ? 'lg:flex-row-reverse' : ''}`}>
               <input type="checkbox" className={`${arabicLanguage ? 'mt-1 ml-3' : 'mt-1 mr-3'}`} />{' '}
               <p className={`text-xs lg:text-sm text-white ${arabicLanguage ? 'text-right' : 'text-left'}`}>
                 {arabicLanguage ? (

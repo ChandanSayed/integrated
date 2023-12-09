@@ -1,12 +1,34 @@
 import { useAppContext } from '@/context/AppContext';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
+  const form = useRef();
   const inputStyle = { border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)', direction: arabicLanguage ? 'rtl' : 'ltr' };
 
   function closeContact() {
     document.body.style.overflow = '';
     setShowContact(false);
   }
+
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_e0yblnd', 'template_cfli0ks', form.current, 'tmF67ljka4s6SYzJ0').then(
+      result => {
+        console.log(result.text);
+        Swal.fire({
+          title: 'Good job!',
+          text: 'Your message sent successfully!',
+          icon: 'success'
+        });
+      },
+      error => {
+        console.log(error.text);
+      }
+    );
+  };
 
   return (
     <>
@@ -21,7 +43,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
           {arabicLanguage ? 'اتصل بـ ' : 'Contact'} <span className="text-yellow">IIT</span>
         </h2>
         <p className="text-xs lg:text-lg text-white mx-auto text-center pb-[30px] lg:pb-[60px]">{arabicLanguage ? 'نحن نحب أن نسمع منك. يرجى ملء هذا النموذج.' : 'We’d love to hear from you. Please fill out this form.'} </p>
-        <form action="#" className={`form flex flex-col gap-[30px] ${arabicLanguage ? 'text-right' : ''}`}>
+        <form ref={form} onSubmit={sendEmail} action="#" className={`form flex flex-col gap-[30px] ${arabicLanguage ? 'text-right' : ''}`}>
           <div className="flex flex-col gap-[30px] lg:gap-6">
             <div className={`flex flex-col lg:flex-row gap-[30px] ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
               <div className="flex flex-col gap-1.5 items-start flex-1">
@@ -92,7 +114,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 {arabicLanguage ? (
                   <span>
                     {' '}
-                    <a href="/ar" rel="noopener noreferrer">
+                    <a href="/ar" rel="noopener noreferrer" className="underline" style={{ direction: 'rtl' }}>
                       من خلال إكمال هذا النموذج، فإنك توافق على قيام{' '}
                     </a>{' '}
                     IIT بتخزين معلوماتك حتى تتمكن من تلقي المعلومات المتعلقة بخدماتنا. اقرأ المزيد حول كيفية إدارتنا لبياناتك الشخصية{' '}
@@ -100,7 +122,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 ) : (
                   <span>
                     By completing this form you agree to IIT storing your information so that you can receive information related to our services.{' '}
-                    <a href="/" rel="noopener noreferrer">
+                    <a href="/" rel="noopener noreferrer" className="underline">
                       Read more about how we manage your personal data
                     </a>
                   </span>

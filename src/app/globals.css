@@ -72,9 +72,6 @@ body {
 * {
   -webkit-tap-highlight-color: transparent;
 }
-:focus {
-  background-color: transparent;
-}
 
 input:-webkit-autofill {
   -webkit-text-fill-color: white !important;

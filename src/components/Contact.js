@@ -133,14 +133,14 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                   {arabicLanguage ? 'الاسم الأول' : 'First name'}
                 </label>
                 <input style={inputStyle} onChange={handleChange} value={formData.fName} type="text" id="fName" name="fName" placeholder={`${arabicLanguage ? 'الاسم الأول' : 'First name'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
-                {errors.fName && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.fName}</p>}
+                {errors.fName && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.fName}</p>}
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="lName" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'اسم العائلة' : 'Last Name'}
                 </label>
                 <input style={inputStyle} type="text" id="lName" onChange={handleChange} value={formData.lName} name="lName" placeholder={`${arabicLanguage ? 'اسم العائلة' : 'Last Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
-                {errors.lName && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.lName}</p>}
+                {errors.lName && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.lName}</p>}
               </div>
             </div>
             <div className={`flex flex-col  gap-[30px] ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
@@ -149,14 +149,14 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                   {arabicLanguage ? 'اسم الشركة' : 'Company Name'}
                 </label>
                 <input style={inputStyle} onChange={handleChange} value={formData.cName} type="text" id="cName" name="cName" placeholder={`${arabicLanguage ? 'اسم الشركة' : 'Company Name'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
-                {errors.cName && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.cName}</p>}
+                {errors.cName && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.cName}</p>}
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="jobTitle" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}
                 </label>
                 <input style={inputStyle} onChange={handleChange} value={formData.jobTitle} type="text" id="jobTitle" name="jobTitle" placeholder={`${arabicLanguage ? 'مسمى وظيفي' : 'Job Title'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
-                {errors.jobTitle && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.jobTitle}</p>}
+                {errors.jobTitle && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.jobTitle}</p>}
               </div>
             </div>
             <div className={`flex flex-col  gap-[30px] ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
@@ -165,14 +165,14 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                   {arabicLanguage ? 'رقم التليفون' : 'Phone number'}
                 </label>
                 <input style={{ border: '1px solid rgba(208, 213, 221, 0.15)', background: 'rgba(255, 255, 255, 0.05)', boxShadow: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)', direction: 'ltr' }} onChange={handleChange} value={formData.phoneNumber} type="text" id="pNumber" name="phoneNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-left' : ''} `} />
-                {errors.phoneNumber && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.phoneNumber}</p>}
+                {errors.phoneNumber && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.phoneNumber}</p>}
               </div>
               <div className="flex flex-col gap-1.5 items-start flex-1">
                 <label htmlFor="email" className={`font-Gilroy font-medium text-sm text-white ${arabicLanguage ? 'text-right block w-full' : ''}`}>
                   {arabicLanguage ? 'بريد إلكتروني' : 'Email'}
                 </label>
                 <input style={inputStyle} type="text" onChange={handleChange} value={formData.email} id="email" name="email" placeholder={`${arabicLanguage ? 'you@company.com' : 'you@company.com'}`} className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
-                {errors.email && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.email}</p>}
+                {errors.email && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.email}</p>}
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-[30px]">
@@ -183,7 +183,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 {/* <input style={inputStyle} type="text" id="pNumber" name="pNumber" placeholder="+1 (555) 000-0000" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage?'text-right':''} `} /> */}
                 <input type="text" onChange={handleChange} value={formData.country} style={inputStyle} name="country" id="Country" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `} />
                 {/* <option value="Country">{arabicLanguage ? 'دولة' : 'Country'}</option> */}
-                {errors.country && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.country}</p>}
+                {errors.country && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.country}</p>}
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-[30px]">
@@ -195,7 +195,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 <option value="Country">Country</option>
               </select> */}
                 <textarea style={inputStyle} onChange={handleChange} value={formData.message} name="message" id="message" cols="30" rows="5" className={`p-[12px_10px_12px_16px] text-base text-white rounded-[8px] outline-transparent focus:border-transparent w-full ${arabicLanguage ? 'text-right' : ''} `}></textarea>
-                {errors.message && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.message}</p>}
+                {errors.message && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.message}</p>}
               </div>
             </div>
             <div className={`flex items-start ${arabicLanguage ? 'lg:flex-row-reverse' : ''}`}>
@@ -219,7 +219,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
                 )}
               </p>
             </div>
-            {errors.checkbox && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : ''}`}>{errors.checkbox}</p>}
+            {errors.checkbox && <p className={`text-red-600 text-xs mt-1 w-full ${arabicLanguage ? 'text-right' : 'text-left'}`}>{errors.checkbox}</p>}
             <div className="flex-1">
               <button className="text-textColor bg-yellow hover:bg-yellowHover text-[10px] text-center py-2 lg:py-3 lg:text-lg w-full rounded-full">{arabicLanguage ? 'يُقدِّم' : 'Submit'}</button>
             </div>

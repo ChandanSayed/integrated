@@ -87,8 +87,8 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
         result => {
           console.log(result.text);
           Swal.fire({
-            title: 'Good job!',
-            text: 'Your message sent successfully!',
+            title: arabicLanguage ? 'Arabic Text' : 'Good job!',
+            text: arabicLanguage ? 'Arabic Message' : 'Your message sent successfully!',
             icon: 'success'
           });
           closeContact();

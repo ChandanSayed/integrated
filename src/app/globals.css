@@ -105,6 +105,15 @@ input:-webkit-autofill {
 .swal2-success-fix {
   background: transparent !important;
 }
+
+button.swal2-confirm.swal2-styled {
+  background-color: #f8c65d !important;
+  color: #02030f !important;
+}
+button.swal2-confirm.swal2-styled:hover {
+  background-color: #ffb10c !important;
+}
+
 /* Track */
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;

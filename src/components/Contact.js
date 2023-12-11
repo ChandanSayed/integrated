@@ -83,7 +83,7 @@ const Contact = ({ showContact, setShowContact, arabicLanguage }) => {
     } else {
       console.log('Form submitted:', formData);
 
-      emailjs.sendForm('service_e0yblnd', 'template_cfli0ks', form.current, 'tmF67ljka4s6SYzJ0').then(
+      emailjs.sendForm('iit_ServiceID', 'template_cr56atj', form.current, 'yJoZ_bCYfV15rk83C').then(
         result => {
           console.log(result.text);
           Swal.fire({

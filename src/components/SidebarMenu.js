@@ -244,7 +244,7 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage, setS
           </div>
           <ul className={`flex flex-col ${arabicLanguage ? 'text-right pl-11 lg:pl-12' : 'pr-11 lg:pr-12'} items-start gap-1`}>
             <li className={`bg-transparent border-b border-white border-opacity-10 flex-1 w-full cursor-pointer`}>
-              <button onClick={handleDrop} className={`flex-1 w-full flex items-center justify-between hover:bg-transparent focus:bg-transparent active:bg-transparent ${arabicLanguage ? 'flex-row-reverse' : ''}`}>
+              <button onClick={handleDrop} className={`flex-1 w-full flex items-center justify-between hover:bg-transparent focus:bg-transparent active:bg-transparent`}>
                 <small className="text-white capitalize font-Gilroy text-xs leading-[41px] lg:leading-[50px] lg:text-base"> {arabicLanguage ? 'اتصل بنا' : 'Segments'} </small>{' '}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
                   <path d="M8 9L15.7942 0H0.205771L8 9Z" fill="white" />
@@ -269,7 +269,7 @@ const SidebarMenu = ({ setShowSidebarMenu, showSidebarMenu, arabicLanguage, setS
               </li>
             ))}
           </ul>
-          <div className={`language mt-20 flex gap-4 mb-3 ${arabicLanguage ? 'justify-end' : ''} `}>
+          <div className={`language mt-20 flex gap-4 mb-3`}>
             <a href="/ar" onClick={handleArabic} className={`w-12 h-12 rounded-full border cursor-pointer ${!arabicLanguage ? 'border-white text-white' : 'border-yellow text-yellow'} flex justify-center items-center text-lg leading-none lg:text-[22px]`}>
               AR
             </a>

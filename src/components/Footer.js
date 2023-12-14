@@ -126,7 +126,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
   return (
     <>
       <footer className="py-10 relative z-10 bg-[#0f101b]">
-        <div className={`flex flex-col ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} max-lg:gap-[30px] gap-4 container lg:max-w-[1500px] px-4 mx-auto mb-[60px] relative z-10`}>
+        <div className={`flex flex-col lg:flex-row max-lg:gap-[30px] gap-4 container lg:max-w-[1500px] px-4 mx-auto mb-[60px] relative z-10`}>
           <div className="w-full lg:w-[10%]">
             <Logo arabicLanguage={arabicLanguage} />
           </div>
@@ -226,7 +226,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
           </div>
           <div className="w-full lg:w-[30%]">
             <h4 className={`text-base lg:text-lg text-white uppercase mb-2 ${arabicLanguage ? 'text-right' : 'text-left'}`}>IIT</h4>
-            <ul className={`flex flex-col max-lg:pl-4 ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} flex-wrap max-lg:gap-5`}>
+            <ul className={`flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5`}>
               {links.map((link, i) => {
                 return (
                   <li className={`lg:w-1/2 ${arabicLanguage ? 'text-right' : ''}`} key={i}>
@@ -241,7 +241,7 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
         </div>
         <div className="bg-black absolute inset-0"></div>
         <div className="footer-bottom relative container xl:max-w-[1328px] px-4 mx-auto border-t pt-[30px] pb-2 border-white border-opacity-30 mb-12">
-          <div className={`flex flex-col items-center gap-8 justify-between ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+          <div className={`flex flex-col items-center gap-8 justify-between lg:flex-row`}>
             <p className="flex gap-4">
               <a href="/" className={`text-[10px] lg:text-xs ${!arabicLanguage ? 'text-white' : 'text-[#5d6268]'}`}>
                 English

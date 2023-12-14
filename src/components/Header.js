@@ -33,7 +33,7 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLa
   return (
     <header className="container xl:max-w-[1268px] mx-auto px-4 mt-8 lg:mt-[54px] relative z-20">
       <div className="fixed z-20 top-0 left-0 right-0 w-full bg-[#000000ff]">
-        <nav className={`flex ${arabicLanguage && 'flex-row-reverse'} justify-between items-center mx-auto px-4 xl:px-5`}>
+        <nav className={`flex justify-between items-center mx-auto px-4 xl:px-5`}>
           <div className="menu w-[73.8px] lg:w-[200.3px]">
             {/* <Image className={`cursor-pointer max-lg:w-[18px] object-cover w-6 fixed z-30 top-4 lg:top-[19px] ${arabicLanguage ? 'ml-auto right-4' : 'left-4'}`} onClick={openMenu} src={menu} alt="menu" /> */}
             <div className={`ham cursor-pointer fixed z-30 ${showSidebarMenu ? 'open top-4 lg:top-7' : 'lg:top-[19px] top-1.5'} ${arabicLanguage ? 'ml-auto right-5' : 'left-5'}`} onClick={openMenu}>

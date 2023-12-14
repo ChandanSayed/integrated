@@ -43,7 +43,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div style={{ direction: 'rtl' }}>
       <div className="wrapper">
         <Header showSidebarMenu={showSidebarMenu} activeScrollMenu={activeScrollMenu} setShowSidebarMenu={setShowSidebarMenu} setShowContact={setShowContact} arabicLanguage={!arabicLanguage} />
         <StarBg />
@@ -55,6 +55,6 @@ export default function Home() {
       <Footer arabicLanguage={!arabicLanguage} setShowContact={setShowContact} />
       <SidebarMenu setShowContact={setShowContact} showSidebarMenu={showSidebarMenu} setShowSidebarMenu={setShowSidebarMenu} arabicLanguage={!arabicLanguage} />
       <Contact showContact={showContact} setShowContact={setShowContact} arabicLanguage={!arabicLanguage} />
-    </>
+    </div>
   );
 }

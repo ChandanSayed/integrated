@@ -9,7 +9,7 @@ const TwoColumnSection = ({ imgSrc, lineOne, lineTwo, para, classes, name, lineO
         <div className="img" data-aos="fade-up">
           <Image src={imgSrc} alt="Service Image" />
         </div>
-        <div data-aos="fade-up" className={`flex flex-col gap-2.5 lg:gap-[30px] max-w-[610px] ${arabicLanguage ? 'items-end' : ''}`}>
+        <div data-aos="fade-up" className={`flex flex-col gap-2.5 lg:gap-[30px] max-w-[610px]`}>
           <h2 className={`max-w-[613px] font-black font-GilroyBlack capitalize text-xl lg:text-4xl ${lineOneColor} ${arabicLanguage ? 'hidden' : 'block'}`}>
             {lineOne} <span className={`${lineTwoColor}`}>{lineTwo}</span>
           </h2>

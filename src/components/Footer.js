@@ -1,12 +1,8 @@
+'use client';
 import Logo from '@/components/Logo';
-import { useAppContext } from '@/context/AppContext';
 import { Poppins } from 'next/font/google';
-import Image from 'next/image';
+import { useState } from 'react';
 const poppins = Poppins({ subsets: ['latin'], weight: '400' });
-
-import x from '/public/images/x.svg';
-import li from '/public/images/in.svg';
-import fb from '/public/images/fb.svg';
 import { Button as ScrollLink } from 'react-scroll';
 
 const Footer = ({ arabicLanguage, setShowContact }) => {
@@ -117,22 +113,39 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
     }
   ];
 
+  const [showFooterLinks, setShowFooterLinks] = useState(0);
+
   function openContact(e) {
     e.preventDefault();
     setShowContact(true);
     document.body.style.overflow = 'hidden';
   }
 
+  function handleShowLinks(ind) {
+    if (ind === showFooterLinks) {
+      return setShowFooterLinks(0);
+    }
+    setShowFooterLinks(ind);
+  }
+
   return (
     <>
       <footer className="py-10 relative z-10 bg-[#0f101b]">
-        <div className={`flex flex-col lg:flex-row max-lg:gap-[30px] gap-4 container lg:max-w-[1500px] px-4 mx-auto mb-[60px] relative z-10`}>
-          <div className="w-full lg:w-[10%]">
+        <div className={`flex flex-col lg:flex-row gap-4 container lg:max-w-[1500px] px-10 lg:px-4 mx-auto mb-[60px] relative z-10`}>
+          <div className="w-full lg:w-[10%] border-b">
             <Logo arabicLanguage={arabicLanguage} />
           </div>
-          <div className="w-full lg:w-[30%]">
-            <h4 className={`text-base lg:text-lg text-white uppercase mb-2 ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'حلول' : 'Solutions'}</h4>
-            <ul className={`nav-items flex flex-col max-lg:pl-4 ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} flex-wrap max-lg:gap-5`}>
+          <div className="w-full lg:w-[30%] border-b">
+            <div className="flex justify-between">
+              <h4 onClick={() => handleShowLinks(1)} className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>
+                {arabicLanguage ? 'حلول' : 'Solutions'}
+              </h4>
+              {/* <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 1L12 23" fill="#fff" stroke="#000" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="M23 12L1 12" fill="#fff" stroke="#000" strokeLinecap="round" strokeLinejoin="round"></path>
+              </svg> */}
+            </div>
+            <ul className={`nav-items flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5  ${showFooterLinks === 1 ? '' : 'max-lg:hidden'}`}>
               <li className="lg:w-1/2">
                 <ScrollLink to="one" spy={true} smooth={true} offset={-180} duration={1000} delay={1000} activeClass="active" className={`font-Gilroy text-xs text-[#686e78] hover:text-[#787878] cursor-pointer ${arabicLanguage ? 'text-right ml-auto w-full' : 'text-left'}`}>
                   {arabicLanguage ? 'التحول الرقمي' : 'Digital Transformation'}
@@ -210,9 +223,11 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
               </li>
             </ul>
           </div>
-          <div className="w-full lg:w-[30%]">
-            <h4 className={`text-base lg:text-lg text-white uppercase mb-2 ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'اتصل بنا' : 'Segments'}</h4>
-            <ul className={`flex flex-col max-lg:pl-4 ${arabicLanguage ? 'lg:flex-row-reverse' : 'lg:flex-row'} flex-wrap max-lg:gap-5`}>
+          <div className="w-full lg:w-[30%] border-b">
+            <h4 onClick={() => handleShowLinks(2)} className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>
+              {arabicLanguage ? 'اتصل بنا' : 'Segments'}
+            </h4>
+            <ul className={`flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5  ${showFooterLinks === 2 ? '' : 'max-lg:hidden'}`}>
               {expertise.map((link, i) => {
                 return (
                   <li className={`lg:w-1/2 ${arabicLanguage ? 'text-right' : ''}`} key={i}>
@@ -224,9 +239,11 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
               })}
             </ul>
           </div>
-          <div className="w-full lg:w-[30%]">
-            <h4 className={`text-base lg:text-lg text-white uppercase mb-2 ${arabicLanguage ? 'text-right' : 'text-left'}`}>IIT</h4>
-            <ul className={`flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5`}>
+          <div className="w-full lg:w-[30%] border-b">
+            <h4 onClick={() => handleShowLinks(3)} className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>
+              IIT
+            </h4>
+            <ul className={`flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5 ${showFooterLinks === 3 ? '' : 'max-lg:hidden'}`}>
               {links.map((link, i) => {
                 return (
                   <li className={`lg:w-1/2 ${arabicLanguage ? 'text-right' : ''}`} key={i}>

@@ -136,14 +136,11 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
             <Logo arabicLanguage={arabicLanguage} />
           </div>
           <div className="w-full lg:w-[30%] border-b">
-            <div className="flex justify-between">
-              <h4 onClick={() => handleShowLinks(1)} className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>
-                {arabicLanguage ? 'حلول' : 'Solutions'}
-              </h4>
-              {/* <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 1L12 23" fill="#fff" stroke="#000" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M23 12L1 12" fill="#fff" stroke="#000" strokeLinecap="round" strokeLinejoin="round"></path>
-              </svg> */}
+            <div onClick={() => handleShowLinks(1)} className="flex justify-between">
+              <h4 className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'حلول' : 'Solutions'}</h4>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform ${showFooterLinks === 1 ? 'rotate-45' : ''}`}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+              </svg>
             </div>
             <ul className={`nav-items flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5  ${showFooterLinks === 1 ? '' : 'max-lg:hidden'}`}>
               <li className="lg:w-1/2">
@@ -224,9 +221,12 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
             </ul>
           </div>
           <div className="w-full lg:w-[30%] border-b">
-            <h4 onClick={() => handleShowLinks(2)} className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>
-              {arabicLanguage ? 'اتصل بنا' : 'Segments'}
-            </h4>
+            <div onClick={() => handleShowLinks(2)} className="flex justify-between">
+              <h4 className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'اتصل بنا' : 'Segments'}</h4>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform ${showFooterLinks === 2 ? 'rotate-45' : ''}`}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+              </svg>
+            </div>
             <ul className={`flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5  ${showFooterLinks === 2 ? '' : 'max-lg:hidden'}`}>
               {expertise.map((link, i) => {
                 return (
@@ -240,9 +240,12 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
             </ul>
           </div>
           <div className="w-full lg:w-[30%] border-b">
-            <h4 onClick={() => handleShowLinks(3)} className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>
-              IIT
-            </h4>
+            <div onClick={() => handleShowLinks(3)} className="flex justify-between">
+              <h4 className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>IIT</h4>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform ${showFooterLinks === 3 ? 'rotate-45' : ''}`}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+              </svg>
+            </div>
             <ul className={`flex flex-col max-lg:pl-4 lg:flex-row flex-wrap max-lg:gap-5 ${showFooterLinks === 3 ? '' : 'max-lg:hidden'}`}>
               {links.map((link, i) => {
                 return (

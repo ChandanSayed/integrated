@@ -132,13 +132,13 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
     <>
       <footer className="py-10 relative z-10 bg-[#0f101b]">
         <div className={`flex flex-col lg:flex-row gap-4 container lg:max-w-[1500px] px-10 lg:px-4 mx-auto mb-[60px] relative z-10`}>
-          <div className="w-full lg:w-[10%] border-b">
+          <div className="w-full lg:w-[10%]">
             <Logo arabicLanguage={arabicLanguage} />
           </div>
-          <div className="w-full lg:w-[30%] border-b">
+          <div className="w-full lg:w-[30%]">
             <div onClick={() => handleShowLinks(1)} className="flex justify-between">
               <h4 className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'حلول' : 'Solutions'}</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform ${showFooterLinks === 1 ? 'rotate-45' : ''}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform lg:hidden ${showFooterLinks === 1 ? 'rotate-45' : ''}`}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
               </svg>
             </div>
@@ -220,10 +220,10 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
               </li>
             </ul>
           </div>
-          <div className="w-full lg:w-[30%] border-b">
+          <div className="w-full lg:w-[30%]">
             <div onClick={() => handleShowLinks(2)} className="flex justify-between">
               <h4 className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>{arabicLanguage ? 'اتصل بنا' : 'Segments'}</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform ${showFooterLinks === 2 ? 'rotate-45' : ''}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform lg:hidden ${showFooterLinks === 2 ? 'rotate-45' : ''}`}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
               </svg>
             </div>
@@ -239,10 +239,10 @@ const Footer = ({ arabicLanguage, setShowContact }) => {
               })}
             </ul>
           </div>
-          <div className="w-full lg:w-[30%] border-b">
+          <div className="w-full lg:w-[30%]">
             <div onClick={() => handleShowLinks(3)} className="flex justify-between">
               <h4 className={`text-base lg:text-lg text-white uppercase mb-2 max-lg:cursor-pointer ${arabicLanguage ? 'text-right' : 'text-left'}`}>IIT</h4>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform ${showFooterLinks === 3 ? 'rotate-45' : ''}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className={`w-4 h-4 transition-transform lg:hidden ${showFooterLinks === 3 ? 'rotate-45' : ''}`}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
               </svg>
             </div>

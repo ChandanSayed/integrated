@@ -44,7 +44,7 @@ const Header = ({ activeScrollMenu, setShowSidebarMenu, setShowContact, arabicLa
           </div>
           <Logo />
           <div className="contact-btn w-[76px] lg:w-[200.3px]">
-            <button onClick={openContact} className={`lg:h-[38.4px] border border-white rounded-full text-center lg:text-base text-white capitalize font-semibold text-[10px] py-1.5 px-2.5 lg:px-[50px] lg:py-1.5 hover:bg-white hover:text-textColor block ${!arabicLanguage ? 'ml-auto' : ''}`}>
+            <button onClick={openContact} className={`lg:h-[38.4px] border border-white rounded-full text-center lg:text-base text-white capitalize font-semibold text-[10px] py-1.5 px-2.5 lg:px-[50px] lg:py-1.5 hover:bg-white hover:text-textColor block ${!arabicLanguage ? 'ml-auto' : 'mr-auto'}`}>
               {arabicLanguage ? 'اتصل بنا' : 'Contact Us'}
             </button>
           </div>
